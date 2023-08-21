@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class Task {
+  final String name;
+  final bool isCompleted;
+
+  Task(this.name, this.isCompleted);
+}
+
+class MyApp extends StatelessWidget {
+  final Map<String, List<Task>> tasks = {
+    'Personal': [
+      Task('Hacer ejercicio', false),
+      Task('Leer un libro', true),
+    ],
+    'Trabajo': [
+      Task('Enviar informe', false),
+      Task('Reunión de equipo', true),
+    ],
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Lista de Tareas'),
+        ),
+        body: ListView.builder(
+          itemCount: tasks.length,
+          itemBuilder: (context, index) {
+            String category = tasks.keys.elementAt(index);
+            List<Task> taskList = tasks[category]!;
+
+            return ExpansionTile(
+              title: Text(category),
+              children: taskList.map((task) {
+                return ListTile(
+                  title: Text(task.name),
+                  trailing: task.isCompleted ? Icon(Icons.check) : Icon(Icons.close),
+                );
+              }).toList(),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}

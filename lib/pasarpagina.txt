@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: PageScrollDemo(),
+    );
+  }
+}
+
+class PageScrollDemo extends StatefulWidget {
+  @override
+  _PageScrollDemoState createState() => _PageScrollDemoState();
+}
+
+class _PageScrollDemoState extends State<PageScrollDemo> {
+  PageController _pageController = PageController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: PageView(
+        controller: _pageController,
+        children: [
+          Page(color: Colors.red),
+          Page(color: Colors.green),
+          Page(color: Colors.blue),
+        ],
+      ),
+    );
+  }
+}
+
+class Page extends StatelessWidget {
+  final Color color;
+
+  Page({required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: color,
+      child: Center(
+        child: Text(
+          'Página',
+          style: TextStyle(fontSize: 24, color: Colors.white),
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,508 @@
+//Importamos el entorno de Flutter  
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+
+//Mi Aplicación Principal
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //Estilo MaterialApp
+    return MaterialApp(
+      //Etiqueta de debugueado
+      debugShowCheckedModeBanner: true,
+      //Tema Principal de la Aplicación.
+      theme: ThemeData.light().copyWith(
+        scaffoldBackgroundColor: Colors.white,
+      ),
+      //Esta es la Página de Inicio - Widget Principal. 
+      home: HomeApp(),
+    );
+  }
+}
+
+
+class HomeApp extends StatefulWidget {
+  @override
+  _HomeAppState createState() => _HomeAppState();
+}
+
+class _HomeAppState extends State<HomeApp>{
+  
+  PageController _pageController = PageController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: PageView(
+        controller: _pageController,
+        scrollDirection: Axis.vertical, // Establecer el desplazamiento vertical
+        children: [
+          Ultra(name: "ULTRAMAN", img: "assets/ultraman.jpg",),
+          Ultra(name:"ULTRASEVEN",img:"assets/ultraseven.jpg",),
+          Ultra(name: "ULTRAMAN JACK",img: "assets/ultramanjack.jpg",),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+//Galería de Ultras Disponibles
+class Ultra extends StatelessWidget{
+  
+  //Esta clase tiene una variable cadena "nombre"
+  final String name;
+  //Esta clase tiene una variable cadena "imagen"
+  final String img;
+  
+  //Para emplear este widget necesitamos que se pase una iamgen
+  Ultra({required this.name, required this.img});
+  
+  //Construcción del Widget
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      
+      //Barra de la Cabecera de la Aplicación. 
+      appBar: AppBar(
+        //Detalles de la Cabecera
+        title: const Text('UltraBrother M78'),
+        backgroundColor: const Color(0xFFEF3340),
+      ),
+      
+      //Cuerpo Principal del Widget
+      body: Center(
+        //El Cuerpo tiene un Hijo Principal
+        child: Column( 
+          //Se encuentran alineado por columnas al centro
+          mainAxisAlignment: MainAxisAlignment.center,
+          //La Columna Tiene Hijos
+          children: [
+            //Primer Hijo → Contenedor
+            Container(
+              //Dimensiones del Contenedor
+              width: 300,
+              height: 500,
+              //Centra el Contenido del Contenedor
+              alignment: Alignment.center,
+              //Decoracion del Contenedor
+              decoration: BoxDecoration(
+                //Bordes Redondeados
+                borderRadius: BorderRadius.circular(10),
+                //Color del Contenedor
+                color: const Color.fromARGB(255, 197, 183, 183),
+                //Agregamos Sombras al Contenedor
+                boxShadow: [
+                  BoxShadow(
+                    //Color de Sombra y Opacidad
+                    color: Colors.black.withOpacity(0.3),
+                    //Radio de Efecto
+                    blurRadius: 10,
+                    //Profundidad de la Sombra
+                    spreadRadius: 2.25,
+                    //Desplazamiento en X & Y
+                    offset: const Offset(0,4),
+                  )
+                ]
+              ),
+              //El Contenedor tiene un Hijo que es una Imagen
+              child: Image.asset(img),
+            ),
+            //Es una Caja de Espaciado
+            const SizedBox(height: 30),
+            //Botón Elevado
+            ElevatedButton(
+              //Aceder a los Estilos de Este Botón Específico.
+              style: ElevatedButton.styleFrom(
+                //Fondo del Botón
+                backgroundColor: const Color(0xFFEF3340)
+              ),
+              //Función que se acciona al Presionar
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    //Elegimos el widget donde navegaremos.
+                    builder: (context) => KaijuListGaleryPage(ultraName: name,)
+                  ),
+                );
+              },
+              //Hijo del Botón para agregar Texto
+              child: const Text(
+                'Registros Kaiju',
+                style: TextStyle(
+                  color:  Color.fromARGB(255, 255, 252, 227),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10.25,),
+            Text(name),
+          ],
+        ),
+      ), 
+    );
+  }
+}
+
+
+
+
+
+//Creamos la Clase Enemigo
+class Enemy {
+  //Variable Cadena Nombre.
+  final String name;
+  //Variable Cadena subtítulo.
+  final String subtitle;
+  //Variable Cadena descripción.
+  final String description;
+  //Variable cadena img clase.
+  final String img; 
+  //Color Asociado al Enemigo
+  final dynamic color;
+  //Posee un Color por defecto al construirse
+  Enemy(this.name,this.subtitle, this.description, this.img, {this.color = Colors.red});
+}
+
+
+//Crear Galería de Kaijus
+class KaijuListGaleryPage extends StatelessWidget{
+  
+  //Variable Nombre del Ultra Asociado
+  final String ultraName;
+  
+  //Lista de Enemigos de Cada Héroe
+  final Map<String,List<Enemy>> ultraEnemies = {
+    'ULTRAMAN': [
+      Enemy(
+        'Bemular',
+        'Alias: El Fugitivo Intergaláctico', 
+        'Oficialmente es el primer enemigo que Ultraman derrotó en su llegada a la Tierra.\nSiendo un peligroso fugitivo intergaláctico su arribo a nuestro planeta fue tan aparatoso que incluso provocó la muerte de un inocente. \nEscondido en un lago para recuperar energías, se encontraba dispuesto a eliminar a cualquiera que osara irrumpir en la zona. En su batalla contra Ultraman mostró resistencia al no querer ser nuevamente aprisionado pero finalmente cayó por el novedoso Rayo Specium.',
+        'assets/bemular.png', 
+        color: const Color.fromARGB(255, 165, 110, 9)),
+      Enemy(
+        'Alien Baltan',
+        'Alias: El Errante Invasor',
+        'Habitantes de un planeta extinto producto de pruebas nucleares. Errantes por el universo, se encontraban en búsqueda de un planeta habitable.\nLlegaron a la Tierra mediante un aterrizaje forzoso, no osbtante se dieron con la grata sorpresa de que nuestro planeta ostentaba lo que ellos deseaban en un nuevo mundo. Sus habilidades ilusorias fueron suficientes para superar a los humanos, pero para su mala suerte la Tierra estaba protegia por otro ser alienígena de gran poder.',
+        'assets/alien_baltan.jpg',
+        color: const Color.fromARGB(255, 9, 64, 165)),
+      Enemy(
+        'Neronga',
+        'Alias: El Devorador Eléctrico',
+        'Registros del antiguo Japón contaban la historia de una bestia que había sido sellada por un antiguo y poderoso samurai. Desde aquel momento la criatura se mantendría en letargo mientras se desarrollaba cada vez más con el pasar del tiempo. \nEventualmente, el continuo avance tecnológico de los humanos haría que el alimento de Neronga escaceara. Resurgiendo y arremetiendo con algunas plantas eléctricas, su encuentro y derrota en manos de Ultraman fue inevitable.',
+        'assets/neronga.jpg',
+        color :Color.fromARGB(255, 231, 197, 4)),
+      Enemy(
+        'Ragon',
+        'Ragon: El Pseudohumanoide Nuclear',
+        'Habitante de un mundo submarino, esta entidad con rasgos humanoides vivía en paz y armonía hasta la inminente explosión de una bomba nuclear. Como consecuencia ragon mutó genéticamente hasta convertirse en un gigante único en su especie. Ya sea por inconsciencia o venganza, ragon se volvería extremadamente peligroso; para colmo de males, este alojaba en su cuerpo otra segunda bomba atómica sin estallar.\nSin duda fue complicado para Ultraman lidiar con la situación.',
+        'assets/ragon.png',
+        color: const Color.fromARGB(255, 9, 165, 69)),
+      Enemy(
+        'Greenmons',
+        'Greenmons: La Muerte Verde',
+        'Descripción de Greenmons...',
+        'assets/greenmons.jpg',
+        color: const Color.fromARGB(255, 4, 180, 72)),
+      Enemy(
+        'Gesura',
+        'Gesura: Latinoamericano',
+        'Descripción de Gesura...',
+        'assets/gesura.png',
+        color: Color.fromARGB(255, 7, 77, 34)),
+      Enemy(
+        'Antlar',
+        'Antlar: El Verdugo Ancestral',
+        'Esta ancestral criatura sometió con terror a una antigua civilización que había perdido a su protector hace mucho tiempo. Cuando la patrulla científica intentó detenerlo, su ira se desató poniendo en peligro a los habitantes. \nEn su batalla contra Ultraman demostró su increíble resistencia; de no ser por un regalo místico dejado atrás por un legendario héroe, posiblemente Ultraman habría tenido muchos problemas.',
+        'assets/antlar.png',
+        color: Color.fromARGB(255, 4, 154, 180)),
+      Enemy(
+        'Red King',
+        'Red King: La Muerte Verde',
+        'Descripción de Red King...',
+        'assets/red_king.jpg',
+        color: Color.fromARGB(255, 207, 204, 20)),
+    ], // Enemigos de ULTRAMAN
+    'ULTRASEVEN': [
+      Enemy(
+      'Eleking',
+      'Eleking: El Monstruo de Otro Mundo',
+      'Descripción de Eleking...',
+      'assets/eleking.png'),
+      Enemy(
+      'King Joe',
+      'King Joe: El Arma Pedan Definitiva',
+      'Descripción de King Joe...',
+      'assets/king_joe.jpg'),
+    ], // Enemigos de ULTRASEVEN
+    'ULTRAMAN JACK': [
+      Enemy(
+      'Bemstar',
+      'Bemstar: El Pollo a la Brasa más Suculento',
+      'Nueva Descripcion...',
+      'assets/bemstar.png'),
+    ], // Enemigos de ULTRAMAN JACK
+    // Agrega más listas de enemigos para otros héroes
+  };
+  
+  //Para que la Galería Kaiju Exista se necesita del nombre del ultra
+  KaijuListGaleryPage({required this.ultraName});
+
+  @override
+  Widget build(BuildContext context) {
+  
+  //Seleccionamos la Lista de Enemigos según el Héroe
+  //De la Estructura de los UltraEnemigos solo seleccionamos la del héroe correspondiente.
+  List<Enemy> selectedUltraEnemies = ultraEnemies[ultraName.toUpperCase()] ?? [];
+    
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "UltraBrother M78",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: (){
+            Navigator.of(context).pop();
+          },
+        ),
+        backgroundColor: Color(0xFFEF3340),
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(16),
+        child: GridView.builder(
+          //Personalización General de la Grilla
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // 2 columnas por fila
+            mainAxisSpacing: 14, // Espacio vertical entre los elementos
+            crossAxisSpacing: 14, // Espacio horizontal entre los elementos
+          ),
+          itemCount: selectedUltraEnemies.length, // Número total de elementos ~ enemigos registrados. 
+          itemBuilder: (context, index) {
+            return Center(
+              child: InkWell(
+                onTap:(){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EnemyDetailsPage(enemy: selectedUltraEnemies[index],)
+                    ),
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                  color: selectedUltraEnemies[index].color,
+                  boxShadow:[
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      blurRadius: 5,
+                      spreadRadius: 2.25,
+                      offset: Offset(0, 4),
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10),
+                      ),
+                        child: Image.asset(
+                        selectedUltraEnemies[index].img,
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        selectedUltraEnemies[index].name,
+                        style: const TextStyle(
+                        fontSize: 14,
+                        shadows: [
+                          Shadow(
+                            color: Color.fromARGB(255, 41, 40, 40),
+                            offset: Offset(1, 1),
+                            blurRadius: 10,
+                          )
+                        ],
+                        // fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white
+                        ),
+                      ),
+                    ]
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+class EnemyDetailsPage extends StatelessWidget {
+  final Enemy enemy;
+
+  EnemyDetailsPage({required this.enemy});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          enemy.name,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: (){
+            Navigator.of(context).pop();
+          },
+        ),
+        backgroundColor: enemy.color,
+      ),
+      drawer: MyDrawer(enemy: enemy,),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(25),
+              child: Container(
+                width: 400,
+                height: 247,
+                child: Image.asset(enemy.img),
+              ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              enemy.subtitle,
+              style: const TextStyle(
+                fontSize: 15, 
+                // fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 12),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.grey[100],
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: Colors.grey[300]!,
+                  width: 1,
+                ),
+              ),
+              padding: EdgeInsets.all(16),
+              child: Text(
+                enemy.description,
+                style: TextStyle(
+                  fontSize: 15.5,
+                  color: Colors.grey[700],
+                ),
+                textAlign: TextAlign.start,
+              ),
+            ),
+            const SizedBox(height: 18),
+            Details(enemy: enemy,),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+//Barra Lateral
+class MyDrawer extends StatelessWidget {
+  
+  final Enemy enemy;
+
+  MyDrawer({required this.enemy});
+  
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: enemy.color,
+              image: DecorationImage(
+                image: AssetImage(enemy.img),
+                fit: BoxFit.cover
+              ),
+            ),
+            child: 
+              Text(
+                enemy.name,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+                  textAlign: TextAlign.start,
+              ),
+          ),
+          ListTile(
+            title: Text('Planeta de Origen: Planeta K76'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text('Debilidades'),
+            onTap: () {
+              //Script
+              print("prueba");
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+//Detalles de los Enemigos
+class Details extends StatelessWidget {
+  final Enemy enemy;
+
+  Details({required this.enemy});
+  
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Scaffold.of(context).openDrawer();
+      },
+      customBorder: CircleBorder(),
+      child: Container(
+        width: 55,
+        height: 55,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: enemy.color
+        ),
+        child: const Icon(
+          Icons.add,
+          size: 24,
+          color:Colors.white,
+        ),
+      )
+    );
+  }
+}
+

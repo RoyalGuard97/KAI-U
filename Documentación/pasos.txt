@@ -1,0 +1,3 @@
+-descargar android studio y sus componentes
+-descargar flutter y colocarlo en las variables de entorno
+-descargar dart y flutter en visual studio code. 

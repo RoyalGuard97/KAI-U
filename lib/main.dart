@@ -27,7 +27,7 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'Hello, World!',
+      'Hola Mundo',
       style: Theme.of(context).textTheme.headlineMedium,
     );
   }

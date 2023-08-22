@@ -25,50 +25,19 @@ class MyApp extends StatelessWidget {
 }
 
 //Widget Home
-// class HomeApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     // TODO: implement build
-//     return Scaffold(
-//         appBar: AppBar(
-//           title: Text("UltraBrother M78") ,
-//           backgroundColor: ultraRed,
-//         ),
-//         body: UltraWidget(name: "@ULTRAMAN",)
-//     );
-//   }
-// }
-
-class HomeApp extends StatefulWidget{
-  @override
-  _HomeAppState createState() => _HomeAppState();
-}
-
-class _HomeAppState extends State<HomeApp>{
-  
-  //Controlador de Deslizamiento
-  PageController _pageController = PageController();
-
+class HomeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(
-        title: Text("UltraBrother M78"),
-        backgroundColor: ultraRed,
-      ),
-      body: PageView(
-        controller: _pageController,
-        scrollDirection: Axis.horizontal,
-        children: [
-          UltraWidget(name: "@ULTRAMAN",img: "assets/ultraman.jpg",),
-          UltraWidget(name: "@ULTRASEVEN",img: "assets/ultraseven.jpg"),
-          UltraWidget(name: "@ULTRAMAN JACK",img:"assets/ultramanjack.jpg"),
-        ],
-      ),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("UltraBrother M78") ,
+          backgroundColor: ultraRed,
+        ),
+        body: UltraWidget(name: "@ULTRAMAN",img: "assets/ultraman.jpg",)
     );
   }
-
 }
+
 
 //Widget para Cada Ultra
 class UltraWidget extends StatelessWidget {

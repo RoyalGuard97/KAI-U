@@ -25,26 +25,58 @@ class MyApp extends StatelessWidget {
 }
 
 //Widget Home
-class HomeApp extends StatelessWidget {
+// class HomeApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return Scaffold(
+//         appBar: AppBar(
+//           title: Text("UltraBrother M78") ,
+//           backgroundColor: ultraRed,
+//         ),
+//         body: UltraWidget(name: "@ULTRAMAN",)
+//     );
+//   }
+// }
+
+class HomeApp extends StatefulWidget{
+  @override
+  _HomeAppState createState() => _HomeAppState();
+}
+
+class _HomeAppState extends State<HomeApp>{
+  
+  //Controlador de Deslizamiento
+  PageController _pageController = PageController();
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("UltraBrother M78") ,
-          backgroundColor: ultraRed,
-        ),
-        body: UltraWidget(name: "@ULTRAMAN",)
+    return  Scaffold(
+      appBar: AppBar(
+        title: Text("UltraBrother M78"),
+        backgroundColor: ultraRed,
+      ),
+      body: PageView(
+        controller: _pageController,
+        scrollDirection: Axis.horizontal,
+        children: [
+          UltraWidget(name: "@ULTRAMAN",img: "assets/ultraman.jpg",),
+          UltraWidget(name: "@ULTRASEVEN",img: "assets/ultraseven.jpg"),
+          UltraWidget(name: "@ULTRAMAN JACK",img:"assets/ultramanjack.jpg"),
+        ],
+      ),
     );
   }
+
 }
 
 //Widget para Cada Ultra
 class UltraWidget extends StatelessWidget {
   //Variables
   final String name;
+  final String img;
   //Constructor
-  UltraWidget({required this.name});
+  UltraWidget({required this.name, required this.img});
   
   @override
   Widget build(BuildContext context) {
@@ -54,7 +86,7 @@ class UltraWidget extends StatelessWidget {
         children: [
           //Imagen
           Image.asset(
-            "assets/ultraman.jpg",
+            img,
             width: 300,
             height: 500,
           ),

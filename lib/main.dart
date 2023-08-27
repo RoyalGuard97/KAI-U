@@ -4,7 +4,7 @@ import 'enemy.dart';
 //Constantes de Color
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 const Color ultraRed = Color(0xFFEF3340);
-const Color ultraWhite = Color.fromARGB(255, 243, 238, 238);
+const Color ultraWhite = Color.fromARGB(255, 238, 232, 232);
 
 //Función Main
 void main() {
@@ -47,7 +47,7 @@ class _HomeAppState extends State<HomeApp>{
         scrollDirection: Axis.horizontal,
         children: [
           UltraWidget(name: "@ULTRAMAN", img: "assets/ultraman.jpg"),
-          UltraWidget(name: "@ULTRAMAN TIGA", img: "assets/ultraman_tiga.webp")
+          UltraWidget(name: "@ULTRAMAN TIGA", img: "assets/ultraseven.jpg")
         ],
       ),
     );
@@ -69,6 +69,7 @@ class UltraWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Expanded(child: Container()),
           //Imagen
           Image.asset(
             img,
@@ -76,7 +77,7 @@ class UltraWidget extends StatelessWidget {
             height: 500,
           ),
           //Separacionn
-          const SizedBox(height: 20),
+          Expanded(child: Container()),
           //Botón
           ElevatedButton(
             //Acción del Botón
@@ -86,23 +87,84 @@ class UltraWidget extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => KaijuGaleryWidget(ultraName: name,))
               );
             },
-            child: Text("Registros Kaiju"),
+            child: Text("◀ Registros Kaiju ▶"),
             //Estilo del Botón
             style: ElevatedButton.styleFrom(
-              backgroundColor: ultraRed
+              backgroundColor: ultraRed,
             ),
           ),
           //Separación
-          const SizedBox(height: 10,),
+          Expanded(child: Container()),
           //Texto
-          Text(name)
+          Text(name),
+          SizedBox(height: 30,)
         ],
       ),
     );
   }
 }
 
+class IntroPage extends StatefulWidget {
+  @override
+  _IntroPageState createState() => _IntroPageState();
+}
 
+class _IntroPageState extends State<IntroPage> with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 800),
+    );
+
+    // Inicia la animación al cargar la página
+    _animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          // Contenido principal de la página (puedes cambiar esto por tus propios widgets)
+          // Widget que realiza la animación inicial
+          AnimatedBuilder(
+            animation: _animationController,
+            builder: (context, child) {
+              double offsetX = 100 * (1 - _animationController.value); // Ajusta la distancia de la animación
+              return Positioned(
+                right: offsetX,
+                top: 0,
+                bottom: 0,
+                child: child!,
+              );
+            },
+            child: Container(
+              width: 100,
+              color: Colors.transparent,
+              child: Center(
+                child: Icon(
+                  Icons.arrow_forward,
+                  size: 40,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 //Widget Dinámico Galería de Enemigos
 class KaijuGaleryWidget extends StatefulWidget{
@@ -248,8 +310,34 @@ class KaijuDetailsWidget extends StatelessWidget{
           ),
         ),
         backgroundColor: enemy.color,
+        flexibleSpace:
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children :[
+            // Expanded(child: Container()),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                // SizedBox(height: 20,),
+                Expanded(child: Container()),
+                //Alejarse de los Bordes
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: 22.0,   // Padding en la parte superior
+                    right: 20.0, // Padding en la parte derecha
+                  ),
+                  child: Container(
+                  height: 30,
+                  child: Image.asset('assets/ultraman_logo.png'),
+                  ),
+                ),
+                Expanded(child: Container()),
+              ],
+            )
+          ],
+        ),
       ),
-      drawer: Drawer(),
+      drawer: KaijuDrawer(enemy: enemy,),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -296,6 +384,90 @@ class KaijuDetailsWidget extends StatelessWidget{
             Details(enemy: enemy)
           ]
         ),
+      ),
+    );
+  }
+}
+
+//Barra Lateral
+class KaijuDrawer extends StatelessWidget {
+  
+  final Enemy enemy;
+
+  KaijuDrawer({required this.enemy});
+  
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: enemy.color,
+              image: DecorationImage(
+                image: AssetImage(enemy.img[0]),
+                fit: BoxFit.cover
+              ),
+            ),
+            child: 
+              Text(
+                enemy.name,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+                  textAlign: TextAlign.start,
+              ),
+          ),
+          ListTile(
+            title: TitleDetails(color: Colors.lightBlue, text: 'Alias Oficial:',),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text('Altura: '),
+            onTap: () {
+              //Script
+              print("prueba");
+            },
+          ),
+          ListTile(
+            title: Text('Peso: '),
+            onTap: () {
+              //Script
+              print("prueba");
+            },
+          ),
+          ListTile(
+            title: Text('Planeta de Origen: '),
+            onTap: () {
+              //Script
+              print("prueba");
+            },
+          ),
+          ListTile(
+            title: Text('Habilidades'),
+            onTap: () {
+              //Script
+              print("prueba");
+            },
+          ),
+          ListTile(
+            title: Text('Debilidades'),
+            onTap: () {
+              //Script
+              print("prueba");
+            },
+          ),
+          ListTile(
+            title: Text('Curiosidades'),
+            onTap: () {
+              //Script
+              print("prueba");
+            },
+          )
+        ],
       ),
     );
   }
@@ -438,6 +610,42 @@ class WidgetButtonsChangeImage extends StatelessWidget{
             ),
           ),
         )
+      ],
+    );
+  }
+}
+
+
+class TitleDetails extends StatelessWidget{
+  final Color color;
+  final String text;
+  TitleDetails({required this.color, required this.text});
+  
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: 10,
+          height: 10,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: RadialGradient(
+              colors: [color.withOpacity(0.8), color.withOpacity(0.5)],
+              radius: 1.0,
+            ),
+          ),
+          margin: EdgeInsets.only(right: 10), // Espacio entre el círculo y el texto
+        ),
+        Text(
+          text,
+          style: TextStyle(
+            fontSize: 14.5,
+            fontWeight: FontWeight.normal,
+            fontStyle: FontStyle.italic,
+            color: Color.fromARGB(255, 121, 120, 120),
+          ),
+        ),
       ],
     );
   }

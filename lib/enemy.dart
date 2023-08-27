@@ -31,7 +31,7 @@ class Enemy {
         'Alien Baltan',
         'Alias: El Errante Invasor',
         'Des',
-        ['assets/alien_baltan.jpg'],
+        ['assets/alien_baltan.webp','assets/002_alien_baltan_2.webp',],
         color: const Color.fromARGB(255, 9, 64, 165)),
       Enemy(
         'Neronga',

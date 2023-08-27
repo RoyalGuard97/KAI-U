@@ -1,0 +1,126 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ImageChanger(),
+    );
+  }
+}
+
+class ImageChanger extends StatefulWidget {
+  @override
+  _ImageChangerState createState() => _ImageChangerState();
+}
+
+
+class _ImageChangerState extends State<ImageChanger> {
+  
+
+
+  List<String> images = [
+    'assets/bemular.png',
+    'assets/alien_baltan.jpg',
+    'assets/neronga.jpg',
+    'assets/king_joe.jpg',
+    // Agrega más rutas de imágenes aquí
+  ];
+  int currentImageIndex = 0;
+
+  void changeImageNext() {
+    setState(() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+    });
+  }
+  void changeImagePrevious() {
+    setState(() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Image Changer'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Image.asset(
+                  images[currentImageIndex],
+                  width: 290,
+                  height: 500,
+                ),
+                WidgetButtonsChangeImage(functionBack: changeImagePrevious, functionNext: changeImageNext,)
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class WidgetButtonsChangeImage extends StatelessWidget{
+  
+  final VoidCallback functionBack; // Declaración de la función
+  final VoidCallback functionNext; // Declaración de la función
+
+  WidgetButtonsChangeImage({required this.functionBack, required this.functionNext});
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ClipOval(
+          child: Material(
+            color: Colors.blue,
+            child: InkWell(
+              onTap: functionBack,
+              child: SizedBox(
+                width: 55,
+                height: 55,
+                child: Icon(
+                  Icons.arrow_left,
+                  color: Colors.white,
+                  size: 40,
+                ),
+              ),
+            ),
+          ),
+        ),
+        SizedBox(width: 240),
+        ClipOval(
+          child: Material(
+            color: Colors.blue,
+            child: InkWell(
+              onTap: functionNext,
+              child: SizedBox(
+                width: 55,
+                height: 55,
+                child: Icon(
+                  Icons.arrow_right,
+                  color: Colors.white,
+                  size: 40,
+                ),
+              ),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+}

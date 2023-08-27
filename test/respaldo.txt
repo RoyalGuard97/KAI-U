@@ -484,7 +484,8 @@ class Details extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return 
+    InkWell(
       onTap: () {
         Scaffold.of(context).openDrawer();
       },

@@ -323,12 +323,21 @@ class KaijuDetailsWidget extends StatelessWidget{
                 //Alejarse de los Bordes
                 Padding(
                   padding: EdgeInsets.only(
-                    top: 22.0,   // Padding en la parte superior
+                    top: 25.0,   // Padding en la parte superior
                     right: 20.0, // Padding en la parte derecha
                   ),
                   child: Container(
-                  height: 30,
-                  child: Image.asset('assets/ultraman_logo.png'),
+                    decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    ),
+                    height: 42,
+                    child:
+                      Padding(
+                        padding: EdgeInsets.all(8),
+                        child: Image.asset(ultraData[enemy.ultra]![1]),
+                      ) 
+                      
                   ),
                 ),
                 Expanded(child: Container()),
@@ -420,52 +429,74 @@ class KaijuDrawer extends StatelessWidget {
               ),
           ),
           ListTile(
-            title: TitleDetails(color: Colors.lightBlue, text: 'Alias Oficial:',),
+            title: TitleDetails(color: enemy.color, text: 'Alias Oficial: ${enemy.aliasOf}',),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: Text('Altura: '),
+            title: TitleDetails(color: Colors.orange, text: 'Altura: ${enemy.height}',),
             onTap: () {
               //Script
               print("prueba");
             },
           ),
           ListTile(
-            title: Text('Peso: '),
+            title: TitleDetails(color: Colors.green, text: 'Peso: ${enemy.weight}',),
             onTap: () {
               //Script
               print("prueba");
             },
           ),
           ListTile(
-            title: Text('Planeta de Origen: '),
+            title: TitleDetails(color: Colors.lightBlueAccent, text: 'Planeta de Origen: ${enemy.planet}',),
             onTap: () {
               //Script
               print("prueba");
             },
           ),
           ListTile(
-            title: Text('Habilidades'),
+            title: TitleDetails(color: Colors.red,text: 'Habilidades',),
             onTap: () {
               //Script
               print("prueba");
             },
           ),
           ListTile(
-            title: Text('Debilidades'),
+            title: TitleDetails(color: Colors.purple, text: 'Debilidades',),
             onTap: () {
               //Script
               print("prueba");
             },
           ),
           ListTile(
-            title: Text('Curiosidades'),
+            title: TitleDetails(color: const Color.fromARGB(255, 252, 227, 2), text: 'Curiosidades',),
             onTap: () {
               //Script
               print("prueba");
             },
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                  left: 35,
+                ), 
+                child: ElevatedButton(onPressed: (){print("Comentario de Ultraman");}, child: Text("Comentario"))
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  left: 30
+                ),
+                child: Container(
+                  width: 127,
+                  child: Image.asset(
+                    ultraData[enemy.ultra]![0]
+                  ),
+                )
+              ),
+            ],
           )
         ],
       ),
@@ -619,7 +650,7 @@ class WidgetButtonsChangeImage extends StatelessWidget{
 class TitleDetails extends StatelessWidget{
   final Color color;
   final String text;
-  TitleDetails({required this.color, required this.text});
+  TitleDetails({required this.color, this.text = ''});
   
   @override
   Widget build(BuildContext context) {

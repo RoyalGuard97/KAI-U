@@ -362,7 +362,7 @@ class KaijuDetailsWidget extends StatelessWidget{
             ),
             Expanded(child: Container()),
             Text(
-              enemy.subtitle,
+              'Alias: ${enemy.subtitle}',
               style: const TextStyle(
                 fontSize: 15,
                 fontStyle: FontStyle.italic
@@ -483,7 +483,49 @@ class KaijuDrawer extends StatelessWidget {
                 padding: EdgeInsets.only(
                   left: 35,
                 ), 
-                child: ElevatedButton(onPressed: (){print("Comentario de Ultraman");}, child: Text("Comentario"))
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: ultraRed,
+                  ),
+                  onPressed: (){
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Container(
+                          color: Color(0xFF737373), // Color de fondo oscuro
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(87, 0, 0, 0),
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Text(
+                                    enemy.comentary,
+                                    style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic ,color: ultraWhite),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text('Cerrar', style: TextStyle(fontSize: 17),),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  }, 
+                  child: Text("Comentario")
+                )
               ),
               Padding(
                 padding: EdgeInsets.only(

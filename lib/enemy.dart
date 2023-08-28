@@ -19,11 +19,12 @@ class Enemy {
   final String weight;
   final String planet;
   final String ultra;
+  final String comentary;
   
   //Posee un Color por defecto al construirse
   Enemy(
     this.name,this.subtitle, this.description, this.img, 
-    {this.color = Colors.black, this.aliasOf = '-', this.height ='-', this.weight = '-', this.planet = '-', this.ultra = '-'} 
+    {this.color = Colors.black, this.aliasOf = '-', this.height ='-', this.weight = '-', this.planet = '-', this.ultra = '-', this.comentary = '-'} 
   );
 }
 
@@ -40,56 +41,57 @@ final Map<String,List<Enemy>> ultraEnemies = {
     '@ULTRAMAN': [
       Enemy(
         'Bemular',
-        'Alias: El Fugitivo Intergaláctico', 
+        'El Fugitivo Intergaláctico', 
         'Oficialmente es el primer enemigo que Ultraman derrotó en su llegada a la Tierra.\nSiendo un peligroso fugitivo intergaláctico su arribo a nuestro planeta fue tan aparatoso que incluso provocó la muerte de un inocente. \nEscondido en un lago para recuperar energías, se encontraba dispuesto a eliminar a cualquiera que osara irrumpir en la zona. En su batalla contra Ultraman mostró resistencia al no querer ser nuevamente aprisionado pero finalmente cayó por el novedoso Rayo Specium.',
         ['assets/bemular.webp','assets/001_bemular_1.webp','assets/001_bemular_2.webp'], 
         color: Color.fromARGB(255, 146, 97, 5),
         aliasOf: 'Monstruo Espacial',
         height: '50m',
         weight: '25,000T',
-        planet: 'K76',
+        planet: 'Planeta M35',
         ultra: '@ULTRAMAN',
+        comentary: '“Mi objetivo era detenerlo antes de que llegara a un planeta habitable. \nFui imprudente al subestimarlo, por ello un valioso terrícola perdió la vida. \nAl principio lo único que pensaba era en saldar mi deuda... Poco sabía que sería el inicio de una gran aventura que me haría sentir aprecio por la humanidad”'
       ),
 
       Enemy(
         'Alien Baltan',
-        'Alias: El Errante Invasor',
+        'El Errante Invasor',
         'Des',
         ['assets/alien_baltan.webp','assets/002_alien_baltan_2.webp',],
         color: const Color.fromARGB(255, 9, 64, 165),
-        aliasOf: 'Monstruo Espacial',
-        height: '50m',
-        weight: '25,000T',
-        planet: 'K76',
+        aliasOf: 'Ninja Espacial',
+        height: 'Microscópico ~ 50m',
+        weight: '0.0 ~ 15,000T',
+        planet: 'Extinto',
         ultra: '@ULTRAMAN',
       ),
       Enemy(
         'Neronga',
-        'Alias: El Devorador Eléctrico',
+        'El Devorador Eléctrico',
         'Des',
         ['assets/neronga.jpg'],
         color :Color.fromARGB(255, 231, 197, 4),
-        aliasOf: 'Monstruo Espacial',
-        height: '50m',
-        weight: '25,000T',
-        planet: 'K76',
+        aliasOf: 'El Monstruo Traslúcido',
+        height: '45m',
+        weight: '40,000T',
+        planet: 'La Tierra',
         ultra: '@ULTRAMAN',
       ),
       Enemy(
         'Ragon',
-        'Ragon: El Pseudohumanoide Nuclear',
+        'El Pseudohumanoide Nuclear',
         'Des',
         ['assets/ragon.png'],
         color: const Color.fromARGB(255, 9, 165, 69),
-        aliasOf: 'Monstruo Espacial',
-        height: '50m',
-        weight: '25,000T',
-        planet: 'K76',
+        aliasOf: 'El Anfibio Primordial',
+        height: '2.0 ~ 50m',
+        weight: '100kg ~ 20,000T',
+        planet: 'La Tierra',
         ultra: '@ULTRAMAN',
       ),
       Enemy(
         'Greenmons',
-        'Greenmons: La Muerte Verde',
+        'La Muerte Verde',
         'Descripción de Greenmons...',
         ['assets/greenmons.jpg'],
         color: const Color.fromARGB(255, 4, 180, 72),
@@ -101,7 +103,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       ),
       Enemy(
         'Gesura',
-        'Gesura: Latinoamericano',
+        'GLatinoamericano',
         'Descripción de Gesura...',
         ['assets/gesura.png'],
         color: Color.fromARGB(255, 7, 77, 34),
@@ -113,7 +115,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       ),
       Enemy(
         'Antlar',
-        'Antlar: El Verdugo Ancestral',
+        'El Verdugo Ancestral',
         'Des',
         ['assets/antlar.png'],
         color: Color.fromARGB(255, 4, 154, 180),
@@ -125,7 +127,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       ),
       Enemy(
         'Red King',
-        'Red King: La Muerte Verde',
+        'La Muerte Verde',
         'Descripción de Red King...',
         ['assets/red_king.jpg'],
         color: Color.fromARGB(255, 207, 204, 20),

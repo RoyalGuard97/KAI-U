@@ -459,21 +459,30 @@ class KaijuDrawer extends StatelessWidget {
             title: TitleDetails(color: Colors.red,text: 'Habilidades',),
             onTap: () {
               //Script
-              print("prueba");
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => KaijuHabilitiesWidget(enemy: enemy))
+              );
             },
           ),
           ListTile(
             title: TitleDetails(color: Colors.purple, text: 'Debilidades',),
             onTap: () {
               //Script
-              print("prueba");
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => KaijuWeaknessWidget(enemy: enemy))
+              );
             },
           ),
           ListTile(
             title: TitleDetails(color: const Color.fromARGB(255, 252, 227, 2), text: 'Curiosidades',),
             onTap: () {
               //Script
-              print("prueba");
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => KaijuCuriosityWidget(enemy: enemy))
+              );
             },
           ),
           Row(
@@ -720,6 +729,135 @@ class TitleDetails extends StatelessWidget{
           ),
         ),
       ],
+    );
+  }
+}
+
+class KaijuHabilitiesWidget extends StatelessWidget{
+  
+  final Enemy enemy;
+  KaijuHabilitiesWidget({required this.enemy});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Habilidades"),
+        backgroundColor: enemy.color,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          KaijuPostWidget(username: "prueba", imageUrl: '', postText: "Rayo Cósmico", timeAgo: "2h",),
+        ]
+      )
+    );
+  }
+}
+
+class KaijuWeaknessWidget extends StatelessWidget{
+  
+  final Enemy enemy;
+  KaijuWeaknessWidget({required this.enemy});
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Debilidades"),
+        backgroundColor: enemy.color,
+      ),
+      body: Center(
+        child: Container(
+          width: 200,
+          height: 400,
+          color: ultraRed,
+        ),
+      )
+    );
+  }
+}
+
+class KaijuCuriosityWidget extends StatelessWidget{
+  
+  final Enemy enemy;
+  KaijuCuriosityWidget({required this.enemy});
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Curiosidades"),
+        backgroundColor: enemy.color,
+      ),
+      body: Center(
+        child: Container(
+          width: 200,
+          height: 400,
+          color: ultraRed,
+        ),
+      )
+    );
+  }
+}
+
+class KaijuPostWidget extends StatelessWidget {
+  final String username;
+  final String timeAgo;
+  final String postText;
+  final String imageUrl;
+
+  KaijuPostWidget({
+    required this.username,
+    required this.timeAgo,
+    required this.postText,
+    required this.imageUrl,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4,
+      margin: EdgeInsets.all(10),
+      child: Container(
+        height: 428,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ListTile(
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage(
+                  '',
+                ),
+              ),
+              title: Text(username),
+              subtitle: Text(timeAgo),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Text(postText),
+            ),
+            Image.asset('assets/bemular.webp'),
+            ButtonBar(
+              alignment: MainAxisAlignment.start,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.thumb_up),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.comment),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.share),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ],
+        ),
+      )
     );
   }
 }

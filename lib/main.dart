@@ -26,28 +26,29 @@ class MyApp extends StatelessWidget {
 }
 
 
-//Widget Home - Dinámico
-class HomeApp extends StatefulWidget{
+//El Home de la App - Dinámico
+class HomeApp extends StatefulWidget {
   @override
   _HomeAppState createState() => _HomeAppState();
 }
 
-class _HomeAppState extends State<HomeApp>{
-  PageController _pageController = PageController();
+class _HomeAppState extends State<HomeApp> {
+  PageController _pageController = PageController(); // Controlador para el PageView
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("UltraBrother M78"),
-        backgroundColor: ultraRed,
-        shadowColor: Color.fromARGB(255, 100, 99, 100),
+        title: Text("UltraBrother M78"), // Título de la AppBar
+        backgroundColor: ultraRed, // Color de fondo de la AppBar
+        shadowColor: Color.fromARGB(255, 100, 99, 100), // Color de sombra de la AppBar
       ),
       body: PageView(
-        controller: _pageController,
-        scrollDirection: Axis.horizontal,
+        controller: _pageController, // Asigna el controlador al PageView
+        scrollDirection: Axis.vertical, // Dirección de desplazamiento vertical
         children: [
-          UltraWidget(name: "@ULTRAMAN", img: "assets/ultraman.jpg"),
-          UltraWidget(name: "@ULTRAMAN TIGA", img: "assets/ultraseven.jpg")
+          UltraWidget(name: "@ULTRAMAN", img: "assets/ultraman.jpg"), // Primer widget de Ultra
+          UltraWidget(name: "@ULTRAMAN TIGA", img: "assets/ultraseven.jpg") // Segundo widget de Ultra
         ],
       ),
     );
@@ -55,12 +56,13 @@ class _HomeAppState extends State<HomeApp>{
 }
 
 
-//Widget para Cada Ultra
+//Widget - Para ingresar a los registros de cada Ultra. 
 class UltraWidget extends StatelessWidget {
-  //Variables
+  // Variables para almacenar el nombre y la imagen del Ultra
   final String name;
   final String img;
-  //Constructor
+  
+  // Constructor para inicializar las variables
   UltraWidget({required this.name, required this.img});
   
   @override
@@ -69,144 +71,77 @@ class UltraWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(child: Container()),
-          //Imagen
+          Expanded(child: Container()), // Espacio flexible arriba
           Image.asset(
             img,
             width: 300,
             height: 500,
-          ),
-          //Separacionn
-          Expanded(child: Container()),
-          //Botón
+          ), // Imagen del Ultra
+          Expanded(child: Container()), // Espacio flexible en el medio
           ElevatedButton(
-            //Acción del Botón
             onPressed: (){
+              // Navegar a la galería de Kaijus
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => KaijuGaleryWidget(ultraName: name,))
               );
             },
-            child: Text("◀ Registros Kaiju ▶"),
-            //Estilo del Botón
+            child: Text("▼ Registros Kaiju ▲"), // Texto del botón
             style: ElevatedButton.styleFrom(
-              backgroundColor: ultraRed,
+              backgroundColor: ultraRed, // Color de fondo del botón
             ),
-          ),
-          //Separación
-          Expanded(child: Container()),
-          //Texto
-          Text(name),
-          SizedBox(height: 30,)
+          ), // Botón
+          Expanded(child: Container()), // Espacio flexible en el medio
+          Text(name), // Nombre del Ultra
+          SizedBox(height: 30,) // Espacio vertical abajo
         ],
       ),
     );
   }
 }
 
-class IntroPage extends StatefulWidget {
-  @override
-  _IntroPageState createState() => _IntroPageState();
-}
-
-class _IntroPageState extends State<IntroPage> with SingleTickerProviderStateMixin {
-  late AnimationController _animationController;
-
-  @override
-  void initState() {
-    super.initState();
-    _animationController = AnimationController(
-      vsync: this,
-      duration: Duration(milliseconds: 800),
-    );
-
-    // Inicia la animación al cargar la página
-    _animationController.forward();
-  }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          // Contenido principal de la página (puedes cambiar esto por tus propios widgets)
-          // Widget que realiza la animación inicial
-          AnimatedBuilder(
-            animation: _animationController,
-            builder: (context, child) {
-              double offsetX = 100 * (1 - _animationController.value); // Ajusta la distancia de la animación
-              return Positioned(
-                right: offsetX,
-                top: 0,
-                bottom: 0,
-                child: child!,
-              );
-            },
-            child: Container(
-              width: 100,
-              color: Colors.transparent,
-              child: Center(
-                child: Icon(
-                  Icons.arrow_forward,
-                  size: 40,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-//Widget Dinámico Galería de Enemigos
-class KaijuGaleryWidget extends StatefulWidget{
-  
-  //Definiendo Variables. 
+//Widget - Galería de Kaijus
+class KaijuGaleryWidget extends StatefulWidget {
+  // Definición de variables.
   final String ultraName;
   const KaijuGaleryWidget({required this.ultraName});
-  
+
   @override
   _KaijuGaleryWidgetState createState() => _KaijuGaleryWidgetState();
 }
 
-class _KaijuGaleryWidgetState extends State<KaijuGaleryWidget>{
-  
-  //Nombre del Ultra
+class _KaijuGaleryWidgetState extends State<KaijuGaleryWidget> {
+  // Variable para el nombre del ultra.
   late String ultraName;
-  
-  //Cadena usada para la búsqueda. 
+
+  // Cadena usada para la búsqueda.
   String searchKaiju = "";
 
-  //Lista de Todo los Enemigos Asociados a un Ultra
+  // Lista de todos los enemigos asociados a un ultra.
   List<Enemy> selectedUltraEnemies = [];
-  
-  //Lista de los Enemigos que concuerden con el Filtrado
+
+  // Lista de enemigos que concuerden con el filtro.
   List<Enemy> filterKaijuNames = [];
-  
+
   @override
-  void initState(){
+  void initState() {
     super.initState();
+    // Inicialización del nombre del ultra y las listas de enemigos.
     ultraName = widget.ultraName;
     selectedUltraEnemies = ultraEnemies[ultraName.toUpperCase()] ?? [];
     filterKaijuNames = selectedUltraEnemies;
   }
 
-  void _filterContainers(String query){
-    setState(() {      
+  void _filterContainers(String query) {
+    setState(() {
+      // Actualización del filtro y las listas.
       searchKaiju = query;
       selectedUltraEnemies = ultraEnemies[widget.ultraName.toUpperCase()] ?? [];
-      filterKaijuNames = selectedUltraEnemies.where((enemy) => enemy.name.toLowerCase().startsWith(query.toLowerCase())).toList();  
+      filterKaijuNames = selectedUltraEnemies
+          .where((enemy) => enemy.name.toLowerCase().startsWith(query.toLowerCase()))
+          .toList();
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -217,6 +152,7 @@ class _KaijuGaleryWidgetState extends State<KaijuGaleryWidget>{
       ),
       body: Column(
         children: [
+          // Cuadro de búsqueda.
           Padding(
             padding: EdgeInsets.all(16.0),
             child: TextField(
@@ -227,6 +163,7 @@ class _KaijuGaleryWidgetState extends State<KaijuGaleryWidget>{
               ),
             ),
           ),
+          // Conjunto de Elementos Filas & Columnas
           Expanded(
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -235,67 +172,78 @@ class _KaijuGaleryWidgetState extends State<KaijuGaleryWidget>{
                 crossAxisSpacing: 2,
               ),
               itemCount: filterKaijuNames.length,
-              itemBuilder: (context, index){
+              itemBuilder: (context, index) {
                 return Center(
                   child: InkWell(
-                    onTap: (){
+                    onTap: () {
+                      // Navegación a la pantalla de detalles del Kaiju.
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => KaijuDetailsWidget(enemy: filterKaijuNames[index]))
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              KaijuDetailsWidget(enemy: filterKaijuNames[index]),
+                        ),
                       );
                     },
                     child: Padding(
                       padding: EdgeInsets.all(9.0),
                       child: Container(
+                        // Contenedor para mostrar el Kaiju (Imagen & Detalles).
                         decoration: BoxDecoration(
                           color: filterKaijuNames[index].color,
-                          borderRadius: BorderRadius.circular(10)
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         child: Column(
                           children: [
+                            // Imagen del Kaiju.
                             ClipRRect(
                               borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
+                                topLeft: Radius.circular(10), //Editar borde de imagen superior izquierdo
+                                topRight: Radius.circular(10), //Editar borde de imagen superior derecho
                               ),
                               child: Image.asset(
-                                filterKaijuNames[index].img[0]
+                                //El Primer Elemento debe ser la Imagen Original 
+                                filterKaijuNames[index].img[0],
                               ),
                             ),
                             Expanded(child: Container()),
+                            // Nombre del Kaiju.
                             Text(
                               filterKaijuNames[index].name,
                               style: TextStyle(
+                                // Sombra para el texto - Se debe Resaltar.
                                 shadows: [
                                   Shadow(
-                                  color: Color.fromARGB(255, 41, 40, 40),
-                                  offset: Offset(1, 1),
-                                  blurRadius: 10,
+                                    color: Color.fromARGB(255, 41, 40, 40),
+                                    offset: Offset(1, 1),
+                                    blurRadius: 10,
                                   )
                                 ],
                                 color: ultraWhite,
                                 fontStyle: FontStyle.italic,
-                                fontWeight: FontWeight.bold
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
+                            //Espaciado
                             Expanded(child: Container()),
                           ],
                         ),
                       ),
-                    )
-                  ),       
+                    ),
+                  ),
                 );
               },
             ),
           )
-        ], 
+        ],
       ),
     );
   }
 }
 
-class KaijuDetailsWidget extends StatelessWidget{
+class KaijuDetailsWidget extends StatelessWidget {
   
+  // Variable para almacenar el enemigo actual.
   final Enemy enemy;
   KaijuDetailsWidget({required this.enemy});
 
@@ -304,40 +252,35 @@ class KaijuDetailsWidget extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          enemy.name,
+          enemy.name, //Nombre del Enemigo
           style: TextStyle(
-            fontWeight: FontWeight.bold
+            fontWeight: FontWeight.bold,
           ),
         ),
         backgroundColor: enemy.color,
-        flexibleSpace:
-        Row(
+        flexibleSpace: Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          children :[
-            // Expanded(child: Container()),
+          children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                // SizedBox(height: 20,),
                 Expanded(child: Container()),
-                //Alejarse de los Bordes
+                // Icono del Ultra en el AppBar
                 Padding(
                   padding: EdgeInsets.only(
-                    top: 25.0,   // Padding en la parte superior
-                    right: 20.0, // Padding en la parte derecha
+                    top: 25.0,   // Espacio en la parte superior
+                    right: 20.0, // Espacio en la parte derecha
                   ),
                   child: Container(
                     decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
                     ),
                     height: 42,
-                    child:
-                      Padding(
-                        padding: EdgeInsets.all(8),
-                        child: Image.asset(ultraData[enemy.ultra]![1]),
-                      ) 
-                      
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Image.asset(ultraData[enemy.ultra]![1]),
+                    ),
                   ),
                 ),
                 Expanded(child: Container()),
@@ -346,148 +289,196 @@ class KaijuDetailsWidget extends StatelessWidget{
           ],
         ),
       ),
-      drawer: KaijuDrawer(enemy: enemy,),
+      // Menú deslizante (drawer)
+      drawer: KaijuDrawer(enemy: enemy),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children:[
+          children: [
+            // Imagen del Kaiju con bordes redondeados
             ClipRRect(
               borderRadius: BorderRadius.circular(25),
               child: Container(
                 height: 247,
                 width: 400,
-                child: ImageChanger(enemy: enemy,),
+                //Usamos este Widget para Elegir las Imágenes a Mostrar.
+                child: ImageChanger(enemy: enemy),
               ),
             ),
             Expanded(child: Container()),
+            
+            // Alias del Kaiju & Subtítulo
             Text(
               'Alias: ${enemy.subtitle}',
               style: const TextStyle(
                 fontSize: 15,
-                fontStyle: FontStyle.italic
+                fontStyle: FontStyle.italic,
               ),
               textAlign: TextAlign.center,
             ),
             Expanded(child: Container()),
+            
+            // Descripción Específica del Kaiju
             Container(
               decoration: BoxDecoration(
                 color: Colors.grey[100],
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
                   color: Colors.grey[300]!,
-                  width: 1
-                )
+                  width: 1,
+                ),
               ),
               padding: EdgeInsets.all(16),
               child: Text(
                 enemy.description,
                 style: TextStyle(
                   fontSize: 15.5,
-                  color: Colors.grey[700]
+                  color: Colors.grey[700],
                 ),
                 textAlign: TextAlign.start,
               ),
             ),
+            
+            //Espaciado Estratégico
             Expanded(child: Container()),
-            Details(enemy: enemy)
-          ]
+            // Detalles adicionales del enemigo
+            MoreDetailsWidget(enemy: enemy),
+          ],
         ),
       ),
     );
   }
 }
 
-//Barra Lateral
+
+//Widget de Barra Lateral para cada Kaiju
 class KaijuDrawer extends StatelessWidget {
   
+  // Variable para almacenar el enemigo actual.
   final Enemy enemy;
 
+  // Constructor que recibe el enemigo.
   KaijuDrawer({required this.enemy});
-  
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         children: [
+          
+          // Encabezado del Drawer con la imagen y el nombre del enemigo.
           DrawerHeader(
             decoration: BoxDecoration(
               color: enemy.color,
               image: DecorationImage(
-                image: AssetImage(enemy.img[0]),
-                fit: BoxFit.cover
+                //La Imagen del Drawer debe ser con el enemigo alineado a la derecha 
+                image: AssetImage(enemy.imgDrawer),
+                fit: BoxFit.cover,
               ),
             ),
-            child: 
-              Text(
-                enemy.name,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
+            child: Align(
+              alignment: Alignment.topLeft,
+              //Contenedor Padre
+              child: Container( 
+                decoration: BoxDecoration(
+                  color: enemy.color.withOpacity(0.75),
+                  //Bordes Redondeados del Contenedor. 
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
-                  textAlign: TextAlign.start,
+                child: Padding(
+                  padding: EdgeInsets.all(6.5),
+                  //Texto Hijo con el Nombre del Kaiju
+                  child: Text(
+                    enemy.name,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                    ),
+                    textAlign: TextAlign.start,
+                  ), // Coloca aquí el widget hijo
+                )
               ),
+            ),
           ),
+          
+          // Opciones Desplegadas en el Drawer.
           ListTile(
-            title: TitleDetails(color: enemy.color, text: 'Alias Oficial: ${enemy.aliasOf}',),
+            // Título del alias oficial del enemigo.
+            title: TitleDetailsDrawer(color: enemy.color, text: 'Alias Oficial: ${enemy.aliasOf}',),
             onTap: () {
               Navigator.pop(context);
             },
           ),
+          
+          // Título de la altura del enemigo.
           ListTile(
-            title: TitleDetails(color: Colors.orange, text: 'Altura: ${enemy.height}',),
+            title: TitleDetailsDrawer(color: Colors.orange, text: 'Altura: ${enemy.height}',),
             onTap: () {
-              //Script
+              // Acción al tocar la opción.
               print("prueba");
             },
           ),
+         
+          // Título del peso del enemigo.
           ListTile(
-            title: TitleDetails(color: Colors.green, text: 'Peso: ${enemy.weight}',),
+            title: TitleDetailsDrawer(color: Colors.green, text: 'Peso: ${enemy.weight}',),
             onTap: () {
-              //Script
+              // Acción al tocar la opción.
               print("prueba");
             },
           ),
+          
+          // Título del planeta de origen del enemigo.
           ListTile(
-            title: TitleDetails(color: Colors.lightBlueAccent, text: 'Planeta de Origen: ${enemy.planet}',),
+            title: TitleDetailsDrawer(color: Colors.lightBlueAccent, text: 'Planeta de Origen: ${enemy.planet}',),
             onTap: () {
-              //Script
+              // Acción al tocar la opción.
               print("prueba");
             },
           ),
+          
+          // Título de las habilidades del enemigo.
           ListTile(
-            title: TitleDetails(color: Colors.red,text: 'Habilidades',),
+            title: TitleDetailsDrawer(color: Colors.red, text: 'Habilidades',),
             onTap: () {
-              //Script
+              // Acción al tocar la opción para mostrar las habilidades.
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => KaijuHabilitiesWidget(enemy: enemy))
               );
             },
           ),
+          
+          // Título de las debilidades del enemigo.
           ListTile(
-            title: TitleDetails(color: Colors.purple, text: 'Debilidades',),
+            title: TitleDetailsDrawer(color: Colors.purple, text: 'Debilidades',),
             onTap: () {
-              //Script
+              // Acción al tocar la opción para mostrar las debilidades.
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => KaijuWeaknessWidget(enemy: enemy))
               );
             },
           ),
+          
+          // Título de las curiosidades del enemigo.
           ListTile(
-            title: TitleDetails(color: const Color.fromARGB(255, 252, 227, 2), text: 'Curiosidades',),
+            title: TitleDetailsDrawer(color: const Color.fromARGB(255, 252, 227, 2), text: 'Curiosidades',),
             onTap: () {
-              //Script
+              // Acción al tocar la opción para mostrar las curiosidades.
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => KaijuCuriosityWidget(enemy: enemy))
               );
             },
           ),
+          
+          // Fila con botón de comentario y logo del Ultra.
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              // Botón para mostrar el comentario.
               Padding(
                 padding: EdgeInsets.only(
                   left: 35,
@@ -497,6 +488,7 @@ class KaijuDrawer extends StatelessWidget {
                     backgroundColor: ultraRed,
                   ),
                   onPressed: (){
+                    // Script Accionado por el Botón: Mostrar una ventana emergente con el comentario.
                     showModalBottomSheet(
                       context: context,
                       builder: (BuildContext context) {
@@ -512,6 +504,7 @@ class KaijuDrawer extends StatelessWidget {
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
+                                // Texto del comentario.
                                 Padding(
                                   padding: const EdgeInsets.all(16.0),
                                   child: Text(
@@ -520,6 +513,7 @@ class KaijuDrawer extends StatelessWidget {
                                     textAlign: TextAlign.left,
                                   ),
                                 ),
+                                // Botón para cerrar la ventana emergente.
                                 TextButton(
                                   onPressed: () {
                                     Navigator.of(context).pop();
@@ -533,9 +527,12 @@ class KaijuDrawer extends StatelessWidget {
                       },
                     );
                   }, 
+                  //Identificador del Botón
                   child: Text("Comentario")
                 )
               ),
+              
+              // Imagen del Ultra con transparencias. .
               Padding(
                 padding: EdgeInsets.only(
                   left: 30
@@ -543,6 +540,7 @@ class KaijuDrawer extends StatelessWidget {
                 child: Container(
                   width: 127,
                   child: Image.asset(
+                    //Se actualiza en Ultra Data y se ingresa mediante una llave. 
                     ultraData[enemy.ultra]![0]
                   ),
                 )
@@ -555,11 +553,12 @@ class KaijuDrawer extends StatelessWidget {
   }
 }
 
-//Detalles de los Enemigos
-class Details extends StatelessWidget {
+
+//Botón (+ Detalles) → Simplemente abre del Drawer
+class MoreDetailsWidget extends StatelessWidget {
   final Enemy enemy;
 
-  Details({required this.enemy});
+  MoreDetailsWidget({required this.enemy});
   
   @override
   Widget build(BuildContext context) {
@@ -587,27 +586,23 @@ class Details extends StatelessWidget {
 }
 
 
-
 class ImageChanger extends StatefulWidget {
-  
+  //Pasamos la referencia del enemigo actual
   final Enemy enemy;
   const ImageChanger({required this.enemy});
-  
+
   @override
   _ImageChangerState createState() => _ImageChangerState();
 }
 
-
 class _ImageChangerState extends State<ImageChanger> {
   
   late Enemy enemy;
-
   List<String> kaijuImages = [];
-  
   int currentImageIndex = 0;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     enemy = widget.enemy;
     kaijuImages = enemy.img;
@@ -615,14 +610,16 @@ class _ImageChangerState extends State<ImageChanger> {
 
   void changeImageNext() {
     setState(() {
+      // Cambia la imagen actual al siguiente índice en forma circular.
       currentImageIndex = (currentImageIndex + 1) % kaijuImages.length;
     });
   }
 
   void changeImagePrevious() {
     setState(() {
-      currentImageIndex = (currentImageIndex + 1) % kaijuImages.length;
-    });
+      // Cambia la imagen actual al índice anterior en forma circular.
+      currentImageIndex = (currentImageIndex - 1 + kaijuImages.length) % kaijuImages.length;
+    });   // 0 - 1 - 2 - 3
   }
 
   @override
@@ -630,13 +627,16 @@ class _ImageChangerState extends State<ImageChanger> {
     return Stack(
       alignment: Alignment.center,
       children: [
-
         ClipRRect(
           borderRadius: BorderRadius.circular(25),
           child: Image.asset(kaijuImages[currentImageIndex]),
-          ),
-        
-        WidgetButtonsChangeImage(functionBack: changeImagePrevious, functionNext: changeImageNext,enemy: enemy,)
+        ),
+        // Widget que contiene los botones para cambiar la imagen.
+        WidgetButtonsChangeImage(
+          functionBack: changeImagePrevious,
+          functionNext: changeImageNext,
+          enemy: enemy,
+        ),
       ],
     );
   }
@@ -698,10 +698,11 @@ class WidgetButtonsChangeImage extends StatelessWidget{
 }
 
 
-class TitleDetails extends StatelessWidget{
+// Son los Títulos para las Opciones del Drawer
+class TitleDetailsDrawer extends StatelessWidget{
   final Color color;
   final String text;
-  TitleDetails({required this.color, this.text = ''});
+  TitleDetailsDrawer({required this.color, this.text = ''});
   
   @override
   Widget build(BuildContext context) {
@@ -745,12 +746,21 @@ class KaijuHabilitiesWidget extends StatelessWidget{
         title: Text("Habilidades"),
         backgroundColor: enemy.color,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          KaijuPostWidget(username: "prueba", imageUrl: '', postText: "Rayo Cósmico", timeAgo: "2h",),
-        ]
-      )
+      body:  GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 1,
+              mainAxisSpacing: 3,
+              crossAxisSpacing: 3,
+            ),
+            itemCount: enemy.kaijuHabs.length,
+            itemBuilder: (context, index){
+              return KaijuPostWidget(
+                username: enemy.ultra, 
+                timeAgo: '2h', 
+                postText:(enemy.kaijuHabs.keys).toList()[index], 
+                imageUrl: (enemy.kaijuHabs.values).toList()[index]);
+            },
+          ),
     );
   }
 }
@@ -817,44 +827,56 @@ class KaijuPostWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 4,
-      margin: EdgeInsets.all(10),
+      color: Color.fromARGB(255, 245, 243, 243),
+      elevation: 6,
+      margin: EdgeInsets.all(8),
       child: Container(
-        height: 428,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ListTile(
               leading: CircleAvatar(
                 backgroundImage: NetworkImage(
-                  '',
+                  'https://static.wikia.nocookie.net/ultramananthology/images/9/91/Ultraman.png/revision/latest?cb=20220206161739',
                 ),
               ),
               title: Text(username),
               subtitle: Text(timeAgo),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: Text(postText),
+              padding: EdgeInsets.only(
+                bottom: 10,
+                left: 10
+              ),
+              child: Text(
+                postText,
+                style: TextStyle(
+                  fontSize: 16.5,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w300
+                ),
+              ),
             ),
-            Image.asset('assets/bemular.webp'),
-            ButtonBar(
-              alignment: MainAxisAlignment.start,
-              children: [
-                IconButton(
-                  icon: Icon(Icons.thumb_up),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(Icons.comment),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(Icons.share),
-                  onPressed: () {},
-                ),
-              ],
-            ),
+            Expanded(
+              child: Image.asset(imageUrl,)
+            )
+            // ButtonBar(
+            //   alignment: MainAxisAlignment.start,
+            //   children: [
+            //     IconButton(
+            //       icon: Icon(Icons.thumb_up),
+            //       onPressed: () {},
+            //     ),
+            //     IconButton(
+            //       icon: Icon(Icons.comment),
+            //       onPressed: () {},
+            //     ),
+            //     IconButton(
+            //       icon: Icon(Icons.share),
+            //       onPressed: () {},
+            //     ),
+            //   ],
+            // ),
           ],
         ),
       )

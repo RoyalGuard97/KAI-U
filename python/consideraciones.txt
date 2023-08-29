@@ -1,0 +1,6 @@
+Cada Enemigo debe tener 4 imágenes 
+
+1.- La Principal que se muestra en su búsqueda
+2.- La Imagen Remasterizada con más detalles por IA 
+3.- La Imagen para el Drawer con el Enemigo alineado a la derecha
+4.- Una Imagen espectacular con IA.

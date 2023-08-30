@@ -60,7 +60,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         //Imágenes Principales
         ['assets/001_bemular_0.webp', 'assets/001_bemular_1.webp', 'assets/001_bemular_3.webp'],
         //Habilidades del Kaiju
-        {'Onda de Calor Traslúcida':'assets/bemular_habs.webp', 'Adaptación Submarina': 'assets/bemular_habs_1.webp'},
+        {'Onda de Calor Traslúcida':'assets/bemular_habs.webp', 'Adaptación Submarina': 'assets/bemular_habs_1.webp', 'Esfera de Viaje': 'assets/bemular_habs_2.webp'},
         color: Color.fromARGB(255, 146, 97, 5),
         aliasOf: 'Monstruo Espacial',
         height: '50m',
@@ -78,7 +78,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         //Imágenes Principales
         ['assets/002_alien_baltan_0.webp','assets/002_alien_baltan_1.webp','assets/002_alien_baltan_3.webp'],
         //Habilidades del Kaiju
-        {'Onda de Calor Traslúcida':'assets/bemular_habs.jpg', 'Adaptación Submarina': 'assets/bemular_habs_1.jpg'},
+        {'Fusión Ilusoria':'assets/baltan_habs.webp', 'Vuelo': 'assets/baltan_habs_1.webp', 'Haz de Destrucción': 'assets/baltan_habs_2.webp', 'Gigantificación por Unión': 'assets/baltan_habs_3.webp'},
         color: const Color.fromARGB(255, 9, 64, 165),
         aliasOf: 'Ninja Espacial',
         height: 'Microscópico ~ 50m',
@@ -87,6 +87,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         ultra: '@ULTRAMAN',
         imgDrawer: 'assets/002_alien_baltan_2.webp',
       ),
+      
       Enemy(
         'Neronga',
         'El Devorador Eléctrico',
@@ -94,7 +95,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         //Imágenes Principales
         ['assets/003_neronga_0.webp','assets/003_neronga_1.webp','assets/003_neronga_3.webp'],
         //Habilidades del Kaiju
-        {'Onda de Calor Traslúcida':'assets/bemular_habs.jpg', 'Adaptación Submarina': 'assets/bemular_habs_1.jpg'},
+        {'Invisibilidad':'assets/neronga_habs.webp', 'Manipulación Eléctrica': 'assets/neronga_habs_1.webp'},
         color :Color.fromARGB(255, 231, 197, 4),
         aliasOf: 'El Monstruo Traslúcido',
         height: '45m',
@@ -138,7 +139,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         'Gesura',
         'GLatinoamericano',
         'Descripción de Gesura...',
-        ['assets/gesura.png'],
+        ['assets/006_gesura_0.webp','assets/006_gesura_1.webp','assets/006_gesura_3.webp'],
         //Habilidades del Kaiju
         {'Onda de Calor Traslúcida':'assets/bemular_habs.jpg', 'Adaptación Submarina': 'assets/bemular_habs_1.jpg'},
         color: Color.fromARGB(255, 7, 77, 34),
@@ -147,12 +148,13 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '10,000T',
         planet: 'La Tierra\n(Brasil ~ Yokohama)',
         ultra: '@ULTRAMAN',
+        imgDrawer: 'assets/006_gesura_2.webp'
       ),
       Enemy(
         'Antlar',
         'El Verdugo Ancestral',
         'Des',
-        ['assets/antlar.png'],
+        ['assets/007_antlar_0.webp','assets/007_antlar_1.webp','assets/007_antlar_3.webp'],
         //Habilidades del Kaiju
         {'Onda de Calor Traslúcida':'assets/bemular_habs.jpg', 'Adaptación Submarina': 'assets/bemular_habs_1.jpg'},
         color: Color.fromARGB(255, 4, 154, 180),
@@ -161,19 +163,24 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '20,000T',
         planet: 'La Tierra (Bharadi)',
         ultra: '@ULTRAMAN',
+        imgDrawer: 'assets/007_antlar_2.webp'
       ),
-      // Enemy(
-      //   'Red King',
-      //   'La Muerte Verde',
-      //   'Descripción de Red King...',
-      //   ['assets/red_king.jpg'],
-      //   color: Color.fromARGB(255, 207, 204, 20),
-      //   aliasOf: 'Monstruo Espacial',
-      //   height: '50m',
-      //   weight: '25,000T',
-      //   planet: 'K76',
-      //   ultra: '@ULTRAMAN',
-      // ),
+      Enemy(
+        'Red King',
+        'El Kaiju Berserk',
+        'Descripción de Red King...',
+         //Imágenes Principales
+        ['assets/008_redking_0.webp','assets/008_redking_1.webp','assets/008_redking_3.webp'],
+        //Habilidades del Kaiju
+        {'Onda de Calor Traslúcida':'assets/bemular_habs.jpg', 'Adaptación Submarina': 'assets/bemular_habs_1.jpg'},
+        color: Color.fromARGB(255, 131, 197, 25),
+        aliasOf: 'El Monstruo Calavera',
+        height: '45m',
+        weight: '20,000T',
+        planet: 'La Tierra\n(Isla Tatara)',
+        ultra: '@ULTRAMAN',
+        imgDrawer: 'assets/008_redking_2.webp'
+      ),
     ], // Enemigos de ULTRAMAN
     '@ULTRAMAN TIGA':[
       Enemy(

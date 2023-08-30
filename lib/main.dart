@@ -48,7 +48,7 @@ class _HomeAppState extends State<HomeApp> {
         scrollDirection: Axis.vertical, // Dirección de desplazamiento vertical
         children: [
           UltraWidget(name: "@ULTRAMAN", img: "assets/ultraman.jpg"), // Primer widget de Ultra
-          UltraWidget(name: "@ULTRAMAN TIGA", img: "assets/ultraseven.jpg") // Segundo widget de Ultra
+          // UltraWidget(name: "@ULTRAMAN TIGA", img: "assets/ultraseven.jpg") // Segundo widget de Ultra
         ],
       ),
     );
@@ -86,7 +86,7 @@ class UltraWidget extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => KaijuGaleryWidget(ultraName: name,))
               );
             },
-            child: Text("▼ Registros Kaiju ▲"), // Texto del botón
+            child: Text("Registros Kaiju"), // Texto del botón
             style: ElevatedButton.styleFrom(
               backgroundColor: ultraRed, // Color de fondo del botón
             ),
@@ -756,7 +756,7 @@ class KaijuHabilitiesWidget extends StatelessWidget{
             itemBuilder: (context, index){
               return KaijuPostWidget(
                 username: enemy.ultra, 
-                timeAgo: '2h', 
+                timeAgo: '#00${index+1}', 
                 postText:(enemy.kaijuHabs.keys).toList()[index], 
                 imageUrl: (enemy.kaijuHabs.values).toList()[index]);
             },

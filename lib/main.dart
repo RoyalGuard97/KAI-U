@@ -5,6 +5,7 @@ import 'enemy.dart';
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 const Color ultraRed = Color(0xFFEF3340);
 const Color ultraWhite = Color.fromARGB(255, 238, 232, 232);
+const Color ultraOption = Color.fromARGB(223, 231, 229, 229);
 
 //Función Main
 void main() {
@@ -364,9 +365,9 @@ class KaijuDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      // backgroundColor: ultraWhite,
       child: ListView(
-        children: [
-          
+        children: [    
           // Encabezado del Drawer con la imagen y el nombre del enemigo.
           DrawerHeader(
             decoration: BoxDecoration(
@@ -402,12 +403,13 @@ class KaijuDrawer extends StatelessWidget {
             ),
           ),
           
+
           // Opciones Desplegadas en el Drawer.
           ListTile(
             // Título del alias oficial del enemigo.
             title: TitleDetailsDrawer(color: enemy.color, text: 'Alias Oficial: ${enemy.aliasOf}',),
             onTap: () {
-              Navigator.pop(context);
+              print("Soy un Script");
             },
           ),
           
@@ -437,10 +439,10 @@ class KaijuDrawer extends StatelessWidget {
               print("prueba");
             },
           ),
-          
+
           // Título de las habilidades del enemigo.
           ListTile(
-            title: TitleDetailsDrawer(color: Colors.red, text: 'Habilidades',),
+            title: TitleDetailsDrawer(color: Colors.red, text: 'Habilidades', optionColor: ultraOption,),
             onTap: () {
               // Acción al tocar la opción para mostrar las habilidades.
               Navigator.push(
@@ -452,7 +454,7 @@ class KaijuDrawer extends StatelessWidget {
           
           // Título de las debilidades del enemigo.
           ListTile(
-            title: TitleDetailsDrawer(color: Colors.purple, text: 'Debilidades',),
+            title: TitleDetailsDrawer(color: Colors.purple, text: 'Debilidades', optionColor: ultraOption,),
             onTap: () {
               // Acción al tocar la opción para mostrar las debilidades.
               Navigator.push(
@@ -464,7 +466,7 @@ class KaijuDrawer extends StatelessWidget {
           
           // Título de las curiosidades del enemigo.
           ListTile(
-            title: TitleDetailsDrawer(color: const Color.fromARGB(255, 252, 227, 2), text: 'Curiosidades',),
+            title: TitleDetailsDrawer(color: const Color.fromARGB(255, 252, 227, 2), text: 'Curiosidades', optionColor: ultraOption,),
             onTap: () {
               // Acción al tocar la opción para mostrar las curiosidades.
               Navigator.push(
@@ -702,7 +704,8 @@ class WidgetButtonsChangeImage extends StatelessWidget{
 class TitleDetailsDrawer extends StatelessWidget{
   final Color color;
   final String text;
-  TitleDetailsDrawer({required this.color, this.text = ''});
+  final Color optionColor;
+  TitleDetailsDrawer({required this.color, this.text = '', this.optionColor = Colors.white});
   
   @override
   Widget build(BuildContext context) {
@@ -720,15 +723,24 @@ class TitleDetailsDrawer extends StatelessWidget{
           ),
           margin: EdgeInsets.only(right: 10), // Espacio entre el círculo y el texto
         ),
-        Text(
-          text,
-          style: TextStyle(
-            fontSize: 14.5,
-            fontWeight: FontWeight.normal,
-            fontStyle: FontStyle.italic,
-            color: Color.fromARGB(255, 121, 120, 120),
+        Container(
+          decoration: BoxDecoration(
+            color: optionColor,
+            borderRadius: BorderRadius.circular(10),
           ),
-        ),
+          child: Padding(
+            padding: EdgeInsets.all(5),
+            child: Text(
+              text,
+              style: TextStyle(
+                fontSize: 14.5,
+                fontWeight: FontWeight.w300,
+                fontStyle: FontStyle.italic,
+                color: Colors.black,
+              ),
+            ),
+          )
+        )
       ],
     );
   }

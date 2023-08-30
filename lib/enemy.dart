@@ -111,7 +111,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         //Imágenes Principales
         ['assets/004_ragon_0.webp','assets/004_ragon_1.webp','assets/004_ragon_3.webp'],
         //Habilidades del Kaiju
-        {'Onda de Calor Traslúcida':'assets/bemular_habs.jpg', 'Adaptación Submarina': 'assets/bemular_habs_1.jpg'},
+        {'Rayo Radioactivo':'assets/ragon_habs.webp', 'Adaptación Submarina': 'assets/ragon_habs_1.webp'},
         color: const Color.fromARGB(255, 9, 165, 69),
         aliasOf: 'El Anfibio Primordial',
         height: '2.0 ~ 50m',

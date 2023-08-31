@@ -73,11 +73,26 @@ class UltraWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(child: Container()), // Espacio flexible arriba
-          Image.asset(
-            img,
+          Container(
             width: 300,
             height: 500,
-          ), // Imagen del Ultra
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [BoxShadow(
+                color: Colors.black.withOpacity(0.3),
+                blurRadius: 10,
+                spreadRadius: 2.25,
+                offset: const Offset(0,4)
+              )]
+            ),
+            child:
+              ClipRRect(
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(22.5)
+                ),
+                child: Image.asset(img),
+              ), // Imagen del Ultra
+          ),
           Expanded(child: Container()), // Espacio flexible en el medio
           ElevatedButton(
             onPressed: (){
@@ -87,9 +102,10 @@ class UltraWidget extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => KaijuGaleryWidget(ultraName: name,))
               );
             },
-            child: Text("Registros Kaiju"), // Texto del botón
+            child: Text("◀ Registros Kaiju ▶"), // Texto del botón
             style: ElevatedButton.styleFrom(
-              backgroundColor: ultraRed, // Color de fondo del botón
+              backgroundColor: ultraRed,
+              elevation: 7.0 // Color de fondo del botón
             ),
           ), // Botón
           Expanded(child: Container()), // Espacio flexible en el medio
@@ -403,13 +419,16 @@ class KaijuDrawer extends StatelessWidget {
             ),
           ),
           
-
           // Opciones Desplegadas en el Drawer.
           ListTile(
             // Título del alias oficial del enemigo.
             title: TitleDetailsDrawer(color: enemy.color, text: 'Alias Oficial: ${enemy.aliasOf}',),
             onTap: () {
-              print("Soy un Script");
+              //Ir al Home de la Página
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => HomeApp())
+              );
             },
           ),
           
@@ -464,9 +483,8 @@ class KaijuDrawer extends StatelessWidget {
             },
           ),
           
-          // Título de las curiosidades del enemigo.
           ListTile(
-            title: TitleDetailsDrawer(color: const Color.fromARGB(255, 252, 227, 2), text: 'Curiosidades', optionColor: ultraOption,),
+            title: TitleDetailsDrawer(color: const Color.fromARGB(255, 252, 227, 2), text: 'Galería Online', optionColor: ultraOption,),
             onTap: () {
               // Acción al tocar la opción para mostrar las curiosidades.
               Navigator.push(
@@ -479,15 +497,30 @@ class KaijuDrawer extends StatelessWidget {
           // Fila con botón de comentario y logo del Ultra.
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Botón para mostrar el comentario.
               Padding(
                 padding: EdgeInsets.only(
-                  left: 35,
+                  left: 25
+                ),
+                child: Container(
+                  width: 127,
+                  child: Image.asset(
+                    //Se actualiza en Ultra Data y se ingresa mediante una llave. 
+                    ultraData[enemy.ultra]![0]
+                  ),
+                )
+              ),
+                           
+              Padding(
+                padding: EdgeInsets.only(
+                  left: 0,
                 ), 
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: ultraRed,
+                    backgroundColor: ultraRed.withOpacity(0.6),
+                    elevation: 5.0,
                   ),
                   onPressed: (){
                     // Script Accionado por el Botón: Mostrar una ventana emergente con el comentario.
@@ -530,23 +563,29 @@ class KaijuDrawer extends StatelessWidget {
                     );
                   }, 
                   //Identificador del Botón
-                  child: Text("Comentario")
+                  child: Padding(
+                    padding:EdgeInsets.all(4.0), 
+                    child: Icon(
+                      IconData(0xe652, fontFamily: 'MaterialIcons'),
+                      size: 32,
+                    )
+                  )
                 )
               ),
               
               // Imagen del Ultra con transparencias. .
-              Padding(
-                padding: EdgeInsets.only(
-                  left: 30
-                ),
-                child: Container(
-                  width: 127,
-                  child: Image.asset(
-                    //Se actualiza en Ultra Data y se ingresa mediante una llave. 
-                    ultraData[enemy.ultra]![0]
-                  ),
-                )
-              ),
+              // Padding(
+              //   padding: EdgeInsets.only(
+              //     left: 50
+              //   ),
+              //   child: Container(
+              //     width: 127,
+              //     child: Image.asset(
+              //       //Se actualiza en Ultra Data y se ingresa mediante una llave. 
+              //       ultraData[enemy.ultra]![0]
+              //     ),
+              //   )
+              // ),
             ],
           )
         ],

@@ -126,12 +126,12 @@ final Map<String,List<Enemy>> ultraEnemies = {
         'Descripción de Greenmons...',
         ['assets/005_greenmons_0.webp','assets/005_greenmons_1.webp','assets/005_greenmons_3.webp'],
         //Habilidades del Kaiju
-        {'Onda de Calor Traslúcida':'assets/bemular_habs.jpg', 'Adaptación Submarina': 'assets/bemular_habs_1.jpg'},
+        {'Neblina Tóxica':'assets/greenmons_habs.webp', 'Adaptación de Forma': 'assets/greenmons_habs_1.webp'},
         color: const Color.fromARGB(255, 4, 180, 72),
         aliasOf: 'La Planta Bizarra',
         height: '2 ~ 40m',
         weight: '10 ~ 20,000T',
-        planet: 'La Tierra (Isla Oirisu)',
+        planet: 'La Tierra\n(Isla Oirisu)',
         ultra: '@ULTRAMAN',
         imgDrawer: 'assets/005_greenmons_2.webp'
       ),
@@ -141,9 +141,9 @@ final Map<String,List<Enemy>> ultraEnemies = {
         'Descripción de Gesura...',
         ['assets/006_gesura_0.webp','assets/006_gesura_1.webp','assets/006_gesura_3.webp'],
         //Habilidades del Kaiju
-        {'Onda de Calor Traslúcida':'assets/bemular_habs.jpg', 'Adaptación Submarina': 'assets/bemular_habs_1.jpg'},
+        {'Adaptación Submarina':'assets/gesura_habs.webp', 'Glándulas Venenosas': 'assets/gesura_habs_1.webp'},
         color: Color.fromARGB(255, 7, 77, 34),
-        aliasOf: 'La Monstruosidad Marina',
+        aliasOf: 'El Monstruo Marino',
         height: '60m',
         weight: '10,000T',
         planet: 'La Tierra\n(Brasil ~ Yokohama)',

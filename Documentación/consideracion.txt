@@ -1,0 +1,2 @@
+- Plantear modificar el Comentario.
+- Que permita descargar las imágenes. 

@@ -1,3 +1,4 @@
+//Tareas - EasterEgg - Cartas Estilo YUGIOH - Pasar Imágenes desplazando a los lados. 
 import 'package:flutter/material.dart';
 import 'enemy.dart';
 
@@ -40,7 +41,7 @@ class _HomeAppState extends State<HomeApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("UltraBrother M78"), // Título de la AppBar
+        title: Text("@UltraBrother M78"), // Título de la AppBar
         backgroundColor: ultraRed, // Color de fondo de la AppBar
         shadowColor: Color.fromARGB(255, 100, 99, 100), // Color de sombra de la AppBar
       ),

@@ -155,7 +155,7 @@ class _KaijuGaleryWidgetState extends State<KaijuGaleryWidget> {
       searchKaiju = query;
       selectedUltraEnemies = ultraEnemies[widget.ultraName.toUpperCase()] ?? [];
       filterKaijuNames = selectedUltraEnemies
-          .where((enemy) => enemy.name.toLowerCase().startsWith(query.toLowerCase()))
+          .where((enemy) => enemy.name.toLowerCase().contains(query.toLowerCase()))
           .toList();
     });
   }
@@ -887,9 +887,7 @@ class KaijuPostWidget extends StatelessWidget {
           children: [
             ListTile(
               leading: CircleAvatar(
-                backgroundImage: NetworkImage(
-                  'https://static.wikia.nocookie.net/ultramananthology/images/9/91/Ultraman.png/revision/latest?cb=20220206161739',
-                ),
+                backgroundImage: AssetImage('assets/ultraman_avatar.webp'),
               ),
               title: Text(username),
               subtitle: Text(timeAgo),

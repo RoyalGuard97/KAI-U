@@ -666,20 +666,34 @@ class _ImageChangerState extends State<ImageChanger> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(25),
-          child: Image.asset(kaijuImages[currentImageIndex]),
-        ),
-        // Widget que contiene los botones para cambiar la imagen.
-        WidgetButtonsChangeImage(
-          functionBack: changeImagePrevious,
-          functionNext: changeImageNext,
-          enemy: enemy,
-        ),
-      ],
+    //Reconocimiento de Gestos - EFECTO IA
+    return GestureDetector(
+      onHorizontalDragUpdate: (details) {
+        // Obtén la diferencia en la posición horizontal entre el inicio y el final del deslizamiento.
+        double delta = details.primaryDelta ?? 0;
+        if (delta > 0) {
+        // Deslizamiento hacia la derecha.
+          changeImagePrevious(); // Llama a la función correspondiente.
+        } else if (delta < 0) {
+          // Deslizamiento hacia la izquierda.
+          changeImageNext(); // Llama a la función correspondiente.
+        }
+      },
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(25),
+            child: Image.asset(kaijuImages[currentImageIndex]),
+          ),
+          // Widget que contiene los botones para cambiar la imagen.
+          WidgetButtonsChangeImage(
+            functionBack: changeImagePrevious,
+            functionNext: changeImageNext,
+            enemy: enemy,
+          ),
+        ],
+      )
     );
   }
 }

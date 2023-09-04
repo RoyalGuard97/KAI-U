@@ -182,7 +182,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         ['assets/008_redking_0.webp','assets/008_redking_1.webp','assets/008_redking_3.webp'],
         //Habilidades del Kaiju
         {'Fuerza Extrema':'assets/redking_habs.webp'},
-        color: Color.fromARGB(255, 131, 197, 25),
+        color: Color.fromARGB(255, 80, 197, 25),
         aliasOf: 'El Monstruo Calavera',
         height: '45m',
         weight: '20,000T',
@@ -191,6 +191,75 @@ final Map<String,List<Enemy>> ultraEnemies = {
         comentary: '“Cuenta con un poder físico impresionante.\nDe no contar con mi entrenamiento especial para contrarrestar sus embestidas sería casi invencible. Debo estar agradecido por su escasa inteligencia.”',
         imgDrawer: 'assets/008_redking_2.webp'
       ),
+      Enemy(
+        'Gabora',
+        'El Devorador Radioactivo',
+        'Descripción de Gabora',
+         //Imágenes Principales
+        ['assets/009_gabora_0.webp','assets/009_gabora_1.webp','assets/009_gabora_3.webp'],
+        //Habilidades del Kaiju
+        {'Haz Radioactivo':'assets/gabora_habs.webp', 'Excavación': 'assets/gabora_habs_1.webp'},
+        color: Color.fromARGB(255, 197, 108, 25),
+        aliasOf: 'El Monustruo de Uranio',
+        height: '50m',
+        weight: '25,000T',
+        planet: 'La Tierra (Tokio)',
+        ultra: '@ULTRAMAN',
+        comentary: '“Una criatura de esta naturaleza haría peligrar a toda civilización de tipo I. Dado a que su fuente de alimento es un material radioactivo es posible que toda interacción que tenga con tecnología humana sea por lo menos incómoda. ¿Será posible que existan más especímenes de estos por el universo? ”',
+        imgDrawer: 'assets/009_gabora_2.webp'
+      ),
+      Enemy(
+        'Jirahs',
+        'El Aberrante Experimento',
+        'Descripción de Jirahs',
+         //Imágenes Principales
+        ['assets/010_jirahs_0.webp','assets/010_jirahs_1.webp','assets/010_jirahs_3.webp'],
+        //Habilidades del Kaiju
+        {'Adaptación Submarina':'assets/jirahs_habs.webp', 'Rayo de Onda Eléctrica': 'assets/jirahs_habs_1.webp'},
+        color: Color.fromARGB(255, 161, 184, 34),
+        aliasOf: 'Dinosaurio Superior',
+        height: '45m',
+        weight: '20,000T',
+        planet: 'La Tierra\n(Lago Ness ~ Kiyatama)',
+        ultra: '@ULTRAMAN',
+        comentary: '“No puedo dejar de pensar en que fui un poco duro con él... ”',
+        imgDrawer: 'assets/010_jirahs_2.webp'
+      ),
+      Enemy(
+        'Gango',
+        'El Monstruo Onírico',
+        'Descripción de Gango',
+         //Imágenes Principales
+        ['assets/011_gango_0.webp','assets/011_gango_1.webp','assets/011_gango_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 145, 87, 21),
+        aliasOf: 'Kaiju de Ondas Cerebrales',
+        height: '2.2 ~ 50m',
+        weight: '60 ~ 60,000T',
+        planet: 'Indeterminado',
+        ultra: '@ULTRAMAN',
+        comentary: '“Antes de adquirir forma este Kaiju era un material capaz de interactuar con las ondas cerebrales de seres vivos inteligentes. A pesar del potencial ilimitado que tiene para hacer del universo un lugar mejor, lo ideal es apartarlo de toda interacción... ya que incluso el ser más noble ha tenido pensamientos no tan gráciles en algún momento”.',
+        imgDrawer: 'assets/011_gango_2.webp'
+      ),
+
+      // Enemy(
+      //   '',
+      //   '',
+      //   '',
+      //    //Imágenes Principales
+      //   ['assets/010_kaiju_0.webp','assets/010_kaiju_1.webp','assets/010_kaiju_3.webp'],
+      //   //Habilidades del Kaiju
+      //   {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+      //   color: Color.fromARGB(255, 161, 184, 34),
+      //   aliasOf: '',
+      //   height: '',
+      //   weight: '',
+      //   planet: '',
+      //   ultra: '@ULTRAMAN',
+      //   comentary: '“”',
+      //   imgDrawer: 'assets/010_kaiju_2.webp'
+      // ),
     ], // Enemigos de ULTRAMAN
     '@ULTRAMAN TIGA':[
       Enemy(

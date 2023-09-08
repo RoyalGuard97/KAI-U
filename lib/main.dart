@@ -1,6 +1,9 @@
 //Tareas - EasterEgg - Cartas Estilo YUGIOH - Pasar Imágenes desplazando a los lados. 
 import 'package:flutter/material.dart';
 import 'enemy.dart';
+import 'package:device_preview/device_preview.dart';
+
+
 
 //Constantes de Color
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
@@ -8,9 +11,15 @@ const Color ultraRed = Color(0xFFEF3340);
 const Color ultraWhite = Color.fromARGB(255, 238, 232, 232);
 const Color ultraOption = Color.fromARGB(223, 231, 229, 229);
 
-//Función Main
+
 void main() {
-  runApp(MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => MyApp(),
+    ),
+    // MyApp()
+  );
 }
 
 //Widget Principal
@@ -18,9 +27,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: ultraWhite
       ),
+      // darkTheme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       home: HomeApp(),
     );
@@ -50,6 +62,8 @@ class _HomeAppState extends State<HomeApp> {
         scrollDirection: Axis.vertical, // Dirección de desplazamiento vertical
         children: [
           UltraWidget(name: "@ULTRAMAN", img: "assets/ultraman.jpg"), // Primer widget de Ultra
+          UltraWidget(name: "@ULTRASEVEN", img: "assets/ultraseven.jpg"), // Primer widget de Ultra
+          UltraWidget(name: "@ULTRASEVEN", img: "assets/ultramanjack.jpg"), // Primer widget de Ultra
           // UltraWidget(name: "@ULTRAMAN TIGA", img: "assets/ultraseven.jpg") // Segundo widget de Ultra
         ],
       ),
@@ -69,14 +83,22 @@ class UltraWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    
+    //Variables Responsive
+    var statusHeight = MediaQuery.of(context).viewPadding.top;
+    var size = MediaQuery.of(context).size;
+    var screenHeight = size.height - (statusHeight);
+    
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(child: Container()), // Espacio flexible arriba
           Container(
-            width: 300,
-            height: 500,
+            
+            // Contola Tamaño de la Imagen Principal Según el Tamaño de la Pantalla
+            height: screenHeight/1.50,
+            
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               boxShadow: [BoxShadow(
@@ -264,10 +286,17 @@ class KaijuDetailsWidget extends StatelessWidget {
   // Variable para almacenar el enemigo actual.
   final Enemy enemy;
   KaijuDetailsWidget({required this.enemy});
+  
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    //Variables Reponsive
+    var statusHeight = MediaQuery.of(context).viewPadding.top;
+    var size = MediaQuery.of(context).size;
+    double screenHeight = size.height - (statusHeight);
+    double screenWidth = size.width;
+  
+  return Scaffold(
       appBar: AppBar(
         title: Text(
           enemy.name, //Nombre del Enemigo
@@ -284,20 +313,28 @@ class KaijuDetailsWidget extends StatelessWidget {
               children: [
                 Expanded(child: Container()),
                 // Icono del Ultra en el AppBar
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: 25.0,   // Espacio en la parte superior
-                    right: 20.0, // Espacio en la parte derecha
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeApp())
+                    );
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      top: 25.0,   // Espacio en la parte superior
+                      right: 20.0, // Espacio en la parte derecha
                     ),
-                    height: 42,
-                    child: Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Image.asset(ultraData[enemy.ultra]![1]),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                      ),
+                      height: 42,
+                      child: Padding(
+                        padding: EdgeInsets.all(8),
+                        child: Image.asset(ultraData[enemy.ultra]![1]),
+                      ),
                     ),
                   ),
                 ),
@@ -310,7 +347,11 @@ class KaijuDetailsWidget extends StatelessWidget {
       // Menú deslizante (drawer)
       drawer: KaijuDrawer(enemy: enemy),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.only(
+          left: 10,
+          right: 10,
+          top: 10,
+          ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -318,13 +359,15 @@ class KaijuDetailsWidget extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(25),
               child: Container(
-                height: 247,
-                width: 400,
                 //Usamos este Widget para Elegir las Imágenes a Mostrar.
+                height: screenHeight/2.85, //Altura de la Imagen según la Pantalla 
+                width : screenWidth, //Ancho de la Imagen según la Pantalla
                 child: ImageChanger(enemy: enemy),
               ),
             ),
-            Expanded(child: Container()),
+            
+            //Espaciado - 1/50 de la Altura de la Pantalla
+            SizedBox(height: screenHeight/50,),
             
             // Alias del Kaiju & Subtítulo
             Text(
@@ -335,10 +378,16 @@ class KaijuDetailsWidget extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            Expanded(child: Container()),
+           
+           //Espaciado - 1/50 de la Altura de la Pantalla
+            SizedBox(height: screenHeight/50,),
             
             // Descripción Específica del Kaiju
             Container(
+              //Dimensiones de la Caja con el Texto "Descripción"
+              height: screenHeight/2.85, //Altura de la Imagen según la Pantalla
+              width: screenWidth, //Ancho de la Imagen según la Pantalla
+              
               decoration: BoxDecoration(
                 color: Colors.grey[100],
                 borderRadius: BorderRadius.circular(10),
@@ -347,14 +396,28 @@ class KaijuDetailsWidget extends StatelessWidget {
                   width: 1,
                 ),
               ),
-              padding: EdgeInsets.all(16),
-              child: Text(
-                enemy.description,
-                style: TextStyle(
-                  fontSize: 15.5,
-                  color: Colors.grey[700],
+              child: Scrollbar(
+                child: ListView(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: 
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                            enemy.description,
+                            style: TextStyle(
+                              fontSize: 19,
+                              color: Colors.grey[700],
+                            ),
+                            textAlign: TextAlign.start,
+                            ),
+                          ],
+                        ),
+                    )
+                  ],
                 ),
-                textAlign: TextAlign.start,
               ),
             ),
             
@@ -362,6 +425,7 @@ class KaijuDetailsWidget extends StatelessWidget {
             Expanded(child: Container()),
             // Detalles adicionales del enemigo
             MoreDetailsWidget(enemy: enemy),
+            Expanded(child: Container())
           ],
         ),
       ),
@@ -424,40 +488,26 @@ class KaijuDrawer extends StatelessWidget {
           ListTile(
             // Título del alias oficial del enemigo.
             title: TitleDetailsDrawer(color: enemy.color, text: 'Alias Oficial: ${enemy.aliasOf}',),
-            onTap: () {
-              //Ir al Home de la Página
-              Navigator.push(
-                context, 
-                MaterialPageRoute(builder: (context) => HomeApp())
-              );
-            },
           ),
           
           // Título de la altura del enemigo.
           ListTile(
             title: TitleDetailsDrawer(color: Colors.orange, text: 'Altura: ${enemy.height}',),
-            onTap: () {
-              // Acción al tocar la opción.
-              print("prueba");
-            },
+            
           ),
          
           // Título del peso del enemigo.
           ListTile(
             title: TitleDetailsDrawer(color: Colors.green, text: 'Peso: ${enemy.weight}',),
-            onTap: () {
-              // Acción al tocar la opción.
-              print("prueba");
-            },
           ),
           
           // Título del planeta de origen del enemigo.
           ListTile(
             title: TitleDetailsDrawer(color: Colors.lightBlueAccent, text: 'Planeta de Origen: ${enemy.planet}',),
-            onTap: () {
-              // Acción al tocar la opción.
-              print("prueba");
-            },
+            // onTap: () {
+            //   // Acción al tocar la opción.
+            //   print("prueba");
+            // },
           ),
 
           // Título de las habilidades del enemigo.
@@ -496,99 +546,112 @@ class KaijuDrawer extends StatelessWidget {
           ),
           
           // Fila con botón de comentario y logo del Ultra.
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Botón para mostrar el comentario.
-              Padding(
-                padding: EdgeInsets.only(
-                  left: 25
-                ),
-                child: Container(
-                  width: 127,
-                  child: Image.asset(
-                    //Se actualiza en Ultra Data y se ingresa mediante una llave. 
-                    ultraData[enemy.ultra]![0]
-                  ),
-                )
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(9.0),
               ),
-                           
-              Padding(
-                padding: EdgeInsets.only(
-                  left: 0,
-                ), 
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: ultraRed.withOpacity(0.6),
-                    elevation: 5.0,
+              image: DecorationImage(
+                image: AssetImage("assets/Land_of_Light.webp"),
+                colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.75), BlendMode.dstATop)
+              ),
+              color: const Color.fromARGB(255, 66, 236, 72)
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Botón para mostrar el comentario.
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 25
                   ),
-                  onPressed: (){
-                    // Script Accionado por el Botón: Mostrar una ventana emergente con el comentario.
-                    showModalBottomSheet(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return Container(
-                          color: Color(0xFF737373), // Color de fondo oscuro
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Color.fromARGB(87, 0, 0, 0),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
+                  child: Container(
+                    width: 127,
+                    child: Image.asset(
+                      //Se actualiza en Ultra Data y se ingresa mediante una llave. 
+                      ultraData[enemy.ultra]![0]
+                    ),
+                  )
+                ),
+                            
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 0,
+                    top: 10,
+                  ), 
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueAccent.withOpacity(0.6),
+                      elevation: 5.0,
+                    ),
+                    onPressed: (){
+                      // Script Accionado por el Botón: Mostrar una ventana emergente con el comentario.
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(
+                            color: Color(0xFF737373), // Color de fondo oscuro
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(87, 0, 0, 0),
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  // Texto del comentario.
+                                  Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: Text(
+                                      enemy.comentary,
+                                      style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic ,color: ultraWhite),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                  ),
+                                  // Botón para cerrar la ventana emergente.
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text('Cerrar', style: TextStyle(fontSize: 17),),
+                                  ),
+                                ],
                               ),
                             ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                // Texto del comentario.
-                                Padding(
-                                  padding: const EdgeInsets.all(16.0),
-                                  child: Text(
-                                    enemy.comentary,
-                                    style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic ,color: ultraWhite),
-                                    textAlign: TextAlign.left,
-                                  ),
-                                ),
-                                // Botón para cerrar la ventana emergente.
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  child: Text('Cerrar', style: TextStyle(fontSize: 17),),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    );
-                  }, 
-                  //Identificador del Botón
-                  child: Padding(
-                    padding:EdgeInsets.all(4.0), 
-                    child: Icon(
-                      IconData(0xe652, fontFamily: 'MaterialIcons'),
-                      size: 32,
+                          );
+                        },
+                      );
+                    }, 
+                    //Identificador del Botón
+                    child: Padding(
+                      padding:EdgeInsets.all(4.0), 
+                      child: const Icon(
+                        const IconData(0xe652, fontFamily: 'MaterialIcons'),
+                        size: 32,
+                      )
                     )
                   )
-                )
-              ),
-              
-              // Imagen del Ultra con transparencias. .
-              // Padding(
-              //   padding: EdgeInsets.only(
-              //     left: 50
-              //   ),
-              //   child: Container(
-              //     width: 127,
-              //     child: Image.asset(
-              //       //Se actualiza en Ultra Data y se ingresa mediante una llave. 
-              //       ultraData[enemy.ultra]![0]
-              //     ),
-              //   )
-              // ),
-            ],
-          )
+                ),
+                
+                // Imagen del Ultra con transparencias. .
+                // Padding(
+                //   padding: EdgeInsets.only(
+                //     left: 50
+                //   ),
+                //   child: Container(
+                //     width: 127,
+                //     child: Image.asset(
+                //       //Se actualiza en Ultra Data y se ingresa mediante una llave. 
+                //       ultraData[enemy.ultra]![0]
+                //     ),
+                //   )
+                // ),
+              ],
+            )
+          ),
         ],
       ),
     );
@@ -602,17 +665,22 @@ class MoreDetailsWidget extends StatelessWidget {
 
   MoreDetailsWidget({required this.enemy});
   
+  
   @override
   Widget build(BuildContext context) {
-    return 
-    InkWell(
+    var statusHeight = MediaQuery.of(context).viewPadding.top;
+    var size = MediaQuery.of(context).size;
+    var screenHeight = size.height - (statusHeight);
+    var screenWidth = size.width;
+    return InkWell(
       onTap: () {
         Scaffold.of(context).openDrawer();
       },
       customBorder: CircleBorder(),
       child: Container(
-        width: 55,
-        height: 55,
+        //Controla la Dimensión del Botón "Más Detalles"
+        width: screenHeight/15.0,
+        height: screenWidth/6.50,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: enemy.color
@@ -632,6 +700,8 @@ class ImageChanger extends StatefulWidget {
   //Pasamos la referencia del enemigo actual
   final Enemy enemy;
   const ImageChanger({required this.enemy});
+
+  
 
   @override
   _ImageChangerState createState() => _ImageChangerState();
@@ -666,15 +736,13 @@ class _ImageChangerState extends State<ImageChanger> {
 
   @override
   Widget build(BuildContext context) {
+
     //Reconocimiento de Gestos - EFECTO IA
     return GestureDetector(
       onHorizontalDragUpdate: (details) {
         // Obtén la diferencia en la posición horizontal entre el inicio y el final del deslizamiento.
         double delta = details.primaryDelta ?? 0;
-        if (delta > 0) {
-        // Deslizamiento hacia la derecha.
-          changeImagePrevious(); // Llama a la función correspondiente.
-        } else if (delta < 0) {
+        if (delta > 1.1) {
           // Deslizamiento hacia la izquierda.
           changeImageNext(); // Llama a la función correspondiente.
         }
@@ -710,12 +778,13 @@ class WidgetButtonsChangeImage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ClipOval(
           child: Material(
-            color: enemy.color,
+            color: enemy.color.withOpacity(0.5),
             child: InkWell(
               onTap: functionBack,
               child: SizedBox(
@@ -733,7 +802,7 @@ class WidgetButtonsChangeImage extends StatelessWidget{
         Expanded(child: Container()), // Este widget ocupa el espacio restante,
         ClipOval(
           child: Material(
-            color: enemy.color,
+            color: enemy.color.withOpacity(0.5),
             child: InkWell(
               onTap: functionNext,
               child: SizedBox(

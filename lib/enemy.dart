@@ -74,7 +74,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Alien Baltan',
         'El Errante Invasor',
-        'Habitantes de un planeta extinto producto de pruebas nucleares. Errantes por el universo, se encontraban en búsqueda de un planeta habitable.\nLlegaron a la Tierra mediante un aterrizaje forzoso, no osbtante se dieron con la grata sorpresa de que nuestro planeta ostentaba lo que ellos deseaban en un nuevo mundo. Sus habilidades ilusorias fueron suficientes para superar a los humanos, pero para su mala suerte la Tierra estaba protegia por otro ser alienígena de gran poder.',
+        'Habitantes de un planeta extinto producto de pruebas nucleares. Errantes por el universo, se encontraban en búsqueda de un planeta habitable.\nLlegaron a la Tierra mediante un aterrizaje forzoso, no osbtante se dieron con la grata sorpresa de que nuestro planeta ostentaba lo que ellos deseaban en un nuevo mundo. Sus habilidades ilusorias fueron suficientes para superar a los humanos, pero para su mala suerte la Tierra estaba protegida por otro ser alienígena de gran poder.',
         //Imágenes Principales
         ['assets/002_alien_baltan_0.webp','assets/002_alien_baltan_1.webp','assets/002_alien_baltan_3.webp'],
         //Habilidades del Kaiju
@@ -109,7 +109,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Ragon',
         'El Pseudohumanoide Nuclear',
-        'Des',
+        'Habitante de un mundo submarino, esta entidad con rasgos humanoides vivía en paz y armonía hasta la inminente explosión de una bomba nuclear. Como consecuencia ragon mutó genéticamente hasta convertirse en un gigante único en su especie. Ya sea por inconsciencia o venganza, este ser se volvería extremadamente peligroso; para colmo de males, este alojaba en su cuerpo una segunda bomba atómica sin estallar.\nSin duda fue complicado para Ultraman lidiar con la situación.',
         //Imágenes Principales
         ['assets/004_ragon_0.webp','assets/004_ragon_1.webp','assets/004_ragon_3.webp'],
         //Habilidades del Kaiju
@@ -243,6 +243,125 @@ final Map<String,List<Enemy>> ultraEnemies = {
         imgDrawer: 'assets/011_gango_2.webp'
       ),
 
+      Enemy(
+        'Mummy Man',
+        'El Amo Ancestral',
+        'Descripción de Mummy Man',
+         //Imágenes Principales
+        ['assets/012_mummy_man_0.webp','assets/012_mummy_man_1.webp','assets/012_mummy_man_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 137, 138, 136),
+        aliasOf: 'La Momia Fantasmal',
+        height: '2m',
+        weight: '110kg',
+        planet: 'La Tierra\n(Okutama)',
+        ultra: '@ULTRAMAN',
+        comentary: '“Pese a la limitación tecnológica de los humanos se las arreglaron para conservar un cuerpo a tal punto de poder reanimarlo. Desconozco mucho de su cultura antigua pero... es posible que haya sido una figura importante. Aún así, cualquier distorsión entre la vida y la muerte solo puede traer pesares. ”',
+        imgDrawer: 'assets/012_mummy_man_2.webp'
+      ),
+      Enemy(
+        'Dodongo',
+        'El Equino Dracónico',
+        'Descripción de Dodongo',
+         //Imágenes Principales
+        ['assets/013_dodongo_0.webp','assets/013_dodongo_1.webp','assets/013_dodongo_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 89, 184, 34),
+        aliasOf: 'El Monstruo de la Momia',
+        height: '30m',
+        weight: '25,000T',
+        planet: 'La Tierra (Okutama)',
+        ultra: '@ULTRAMAN',
+        comentary: '“Son obvias las razones, pero son pocas las criaturas del universo que permitan cabalgar a los de mi especie. Fue una experiencia novedosa, he de admitir.\nLástima que este sirviente sin rumbo terminó convirtiéndose en un peligro incontrolable”.',
+        imgDrawer: 'assets/013_dodongo_2.webp'
+      ),
+      Enemy(
+        'Pestar',
+        'La Estrella Petrófaga',
+        'Descripción de Pestar',
+         //Imágenes Principales
+        ['assets/014_pestar_0.webp','assets/014_pestar_1.webp','assets/014_pestar_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 140, 189, 7),
+        aliasOf: 'La Bestia Petrolera',
+        height: '50m',
+        weight: '25,000T',
+        planet: 'La Tierra\n(Profundidades)',
+        ultra: '@ULTRAMAN',
+        comentary: '“Enfrentarlo supuso un atentado al medio ambiente, es asombroso pero de alguna forma esta criatura logró transformar combustibles fósiles en parte de su alimentación. Dejarlo sin represalias dejaría un desastre ambiental irreparable y atacarlo con vehemencia podría suponer una reacción en cadena incontrolable. Ante estos casos es mejor ir codo a codo con la humanidad”.',
+        imgDrawer: 'assets/014_pestar_2.webp'
+      ),
+      Enemy(
+        'Gamakugira',
+        'El Cetáceo Mounstruoso',
+        'Descripción de Gamakugira',
+         //Imágenes Principales
+        ['assets/015_gamakujira_0.webp','assets/015_gamakujira_1.webp','assets/015_gamakujira_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 19, 156, 115),
+        aliasOf: 'El Mounstruo de las\nMareas',
+        height: '35m',
+        weight: '10,000T',
+        planet: 'La Tierra\n(Profundidades)',
+        ultra: '@ULTRAMAN',
+        comentary: '“Aquella ocasión fue extraña, incluso sentí que me volví alguien diferente... ”.',
+        imgDrawer: 'assets/015_gamakujira_2.webp'
+      ),
+      Enemy(
+        'Gavadon',
+        'El Mounstruo de Ensueño',
+        'Descripción de Gavadon',
+         //Imágenes Principales
+        ['assets/016_gavadon_0.webp','assets/016_gavadon_1.webp','assets/016_gavadon_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 184, 182, 34),
+        aliasOf: 'Mountruo\nBidimensional',
+        height: '60m',
+        weight: '40,000T',
+        planet: 'La Tierra\n(Rayos Cósmicos)',
+        ultra: '@ULTRAMAN',
+        comentary: '“Escuchar a aquellos niños rogarme que no destruyera a su creación me conmovió, supongo que sentían que de alguna forma era su responsabilidad. Si bien no pude mantenerlo en la Tierra por los diferentes problemas que causaría, me encargué de inmortalizar su existencia en las estrellas”.',
+        imgDrawer: 'assets/016_gavadon_2.webp'
+      ),
+      Enemy(
+        'Alien Baltan II',
+        'La Reencarnación de la Venganza',
+        'Descripción de Alien Baltan II',
+         //Imágenes Principales
+        ['assets/017_alien_baltan_0.webp','assets/017_alien_baltan_1.webp','assets/017_alien_baltan_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 134, 89, 6),
+        aliasOf: 'Baltan Generation II',
+        height: 'Microscópico ~ 50m',
+        weight: '0 ~ 15,000T',
+        planet: 'Planeta R',
+        ultra: '@ULTRAMAN',
+        comentary: '“Tal y como registré los Baltan son enemigos muy persistentes, al parecer un grupo de rezagados consiguió asilo en un planeta no tan agraciado como la Tierra. Si bien crearon un plan exhaustivo para mantenerme alejado de la acción, no contaron con mi poderosa pero extenuante habilidad de teletransportación”.',
+        imgDrawer: 'assets/017_alien_baltan_2.webp'
+      ),
+      Enemy(
+        'Bullton',
+        'Laͣ Вⷡeͤs͛ᴛⷮiͥaͣ dͩeͤ laͣ Cͨuͧaͣrͬᴛⷮaͣ Dͩiͥmͫeͤns͛iͥoͦ́n',
+        'NO',
+         //Imágenes Principales
+        ['assets/018_bullton_0.webp','assets/018_bullton_1.webp','assets/018_bullton_3.webp','assets/018_bullton_4.webp','assets/018_bullton_5.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 179, 18, 85),
+        aliasOf: 'NO',
+        height: 'NO',
+        weight: 'NO',
+        planet: 'NO',
+        ultra: '@ULTRAMAN',
+        comentary: '“@#!?~”.',
+        imgDrawer: 'assets/018_bullton_2.webp'
+      ),
       // Enemy(
       //   '',
       //   '',
@@ -257,7 +376,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       //   weight: '',
       //   planet: '',
       //   ultra: '@ULTRAMAN',
-      //   comentary: '“”',
+      //   comentary: '“”.',
       //   imgDrawer: 'assets/010_kaiju_2.webp'
       // ),
     ], // Enemigos de ULTRAMAN

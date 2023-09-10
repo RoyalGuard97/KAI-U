@@ -449,21 +449,55 @@ final Map<String,List<Enemy>> ultraEnemies = {
       ),
       Enemy(
         'Jamila',
-        '',
-        '',
+        'La Deshumanización Encarnada',
+        'Descripción de Jamila',
          //Imágenes Principales
-        ['assets/010_kaiju_0.webp','assets/010_kaiju_1.webp','assets/010_kaiju_3.webp'],
+        ['assets/024_jamila_0.webp','assets/024_jamila_1.webp','assets/024_jamila_3.webp'],
         //Habilidades del Kaiju
         {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
         color: Color.fromARGB(255, 85, 85, 84),
-        aliasOf: '',
-        height: '',
-        weight: '',
-        planet: '',
+        aliasOf: 'Anterior Habitante de la\nTierra',
+        height: '50m',
+        weight: '10,000T',
+        planet: 'La Tierra\n(Interacción Cósmica)',
+        ultra: '@ULTRAMAN',
+        comentary: '“Aún cuando la venganza no es el camino de un Ultra, puedo comprender el sentir de esta criatura. La temeraria carrera espacial llevada por los humanos emplearon vidas valiosas como recursos, era solo cuestión de tiempo para enfrentar las consencuencias. No hubo orgullo alguno en batalla...”.',
+        imgDrawer: 'assets/024_jamila_2.webp'
+      ),
+      Enemy(
+        'Gubira',
+        'El Monstruo Taladrante',
+        'Descripción de Gubira',
+         //Imágenes Principales
+        ['assets/025_gubira_0.webp','assets/025_gubira_1.webp','assets/025_gubira_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 156, 146, 89),
+        aliasOf: 'Mounstruo del Mar\nProfundo',
+        height: '50m',
+        weight: '35,000T',
+        planet: 'La Tierra\n(Profundidades)',
         ultra: '@ULTRAMAN',
         comentary: '“”.',
-        imgDrawer: 'assets/010_kaiju_2.webp'
+        imgDrawer: 'assets/025_gubira_2.webp'
       ),
+      // Enemy(
+      //   '',
+      //   '',
+      //   '',
+      //    //Imágenes Principales
+      //   ['assets/010_kaiju_0.webp','assets/010_kaiju_1.webp','assets/010_kaiju_3.webp'],
+      //   //Habilidades del Kaiju
+      //   {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+      //   color: Color.fromARGB(255, 161, 184, 34),
+      //   aliasOf: '',
+      //   height: '',
+      //   weight: '',
+      //   planet: '',
+      //   ultra: '@ULTRAMAN',
+      //   comentary: '“”.',
+      //   imgDrawer: 'assets/010_kaiju_2.webp'
+      // ),
       // Enemy(
       //   '',
       //   '',

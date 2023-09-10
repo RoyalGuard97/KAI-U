@@ -1,0 +1,70 @@
+class KaijuPostWidget extends StatelessWidget {
+  final String username;
+  final String timeAgo;
+  final String postText;
+  final String imageUrl;
+
+  KaijuPostWidget({
+    required this.username,
+    required this.timeAgo,
+    required this.postText,
+    required this.imageUrl,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: Color.fromARGB(255, 245, 243, 243),
+      elevation: 6,
+      margin: EdgeInsets.all(8),
+      child: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ListTile(
+              leading: CircleAvatar(
+                backgroundImage: AssetImage('assets/ultraman_avatar.webp'),
+              ),
+              title: Text(username),
+              subtitle: Text(timeAgo),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                bottom: 10,
+                left: 10
+              ),
+              child: Text(
+                postText,
+                style: TextStyle(
+                  fontSize: 16.5,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w300
+                ),
+              ),
+            ),
+            Expanded(
+              child: Image.asset(imageUrl,)
+            )
+            // ButtonBar(
+            //   alignment: MainAxisAlignment.start,
+            //   children: [
+            //     IconButton(
+            //       icon: Icon(Icons.thumb_up),
+            //       onPressed: () {},
+            //     ),
+            //     IconButton(
+            //       icon: Icon(Icons.comment),
+            //       onPressed: () {},
+            //     ),
+            //     IconButton(
+            //       icon: Icon(Icons.share),
+            //       onPressed: () {},
+            //     ),
+            //   ],
+            // ),
+          ],
+        ),
+      )
+    );
+  }
+}

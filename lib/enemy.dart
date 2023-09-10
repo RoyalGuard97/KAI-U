@@ -234,7 +234,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         //Habilidades del Kaiju
         {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
         color: Color.fromARGB(255, 145, 87, 21),
-        aliasOf: 'Kaiju de Ondas Cerebrales',
+        aliasOf: 'Kaiju de Ondas\nCerebrales',
         height: '2.2 ~ 50m',
         weight: '60 ~ 60,000T',
         planet: 'Indeterminado',
@@ -361,6 +361,108 @@ final Map<String,List<Enemy>> ultraEnemies = {
         ultra: '@ULTRAMAN',
         comentary: '“@#!?~”.',
         imgDrawer: 'assets/018_bullton_2.webp'
+      ),
+      Enemy(
+        'Alien Zarab',
+        'El Hermano de Otro Mundo',
+        'Descripción de Alien Zarab',
+         //Imágenes Principales
+        ['assets/019_alien_zarab_0.webp','assets/019_alien_zarab_1.webp','assets/019_alien_zarab_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 119, 100, 108),
+        aliasOf: 'El Alien Vicioso',
+        height: '1.8 ~ 40m',
+        weight: '30 ~ 20,000T',
+        planet: 'Planeta Zarab',
+        ultra: '@ULTRAMAN',
+        comentary: '“Un enemigo imponente. Fui inferior ante él en cada uno de los aspectos posibles, su ingenio e inteligencia son insuperables. No sería posible que un héroe presuntuoso como yo lo venciera sin ayuda”.',
+        imgDrawer: 'assets/019_alien_zarab_2.webp'
+      ),
+      Enemy(
+        'Aboras & Banila',
+        'El Dúo Infernal',
+        'Descripción de Aboras & Banila',
+         //Imágenes Principales
+        ['assets/020_aboras_banila_0.webp','assets/020_aboras_banila_1.webp','assets/020_aboras_banila_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 151, 37, 185),
+        aliasOf: '',
+        height: '',
+        weight: '',
+        planet: '',
+        ultra: '@ULTRAMAN',
+        comentary: '“Este dúo de bestias ancestrales aterrorizaron a alguna antigua civilización terrestre. De haberme enfrentado a ellas como un equipo es posible que hubiese visto el abismo de la derrota. Para nuestra fortuna estas criaturas parecen ser antagónicas la una con la otra”.',
+        imgDrawer: 'assets/020_aboras_banila_2.webp'
+      ),
+      Enemy(
+        'Hidora',
+        '',
+        '',
+         //Imágenes Principales
+        ['assets/021_hidora_0.webp','assets/021_hidora_1.webp','assets/021_hidora_3.webp','assets/021_hidora_4.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 148, 97, 89),
+        aliasOf: '',
+        height: '',
+        weight: '',
+        planet: '',
+        ultra: '@ULTRAMAN',
+        comentary: '“”.',
+        imgDrawer: 'assets/021_hidora_2.webp'
+      ),
+      Enemy(
+        'Kemular',
+        'El Anfibio Venenoso',
+        'Descripción de Kemular',
+         //Imágenes Principales
+        ['assets/022_kemular_0.webp','assets/022_kemular_1.webp','assets/022_kemular_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 51, 82, 103),
+        aliasOf: 'Mounstruo de Gas\nVenenoso',
+        height: '35m',
+        weight: '10,000T',
+        planet: 'La Tierra (Cráter \nKyushu)',
+        ultra: '@ULTRAMAN',
+        comentary: '“”.',
+        imgDrawer: 'assets/022_kemular_2.webp'
+      ),
+      Enemy(
+        'Telesdon',
+        'El Verdugo Subterráneo',
+        'Descripción de Telesdon',
+         //Imágenes Principales
+        ['assets/023_telesdon_0.webp','assets/023_telesdon_1.webp','assets/023_telesdon_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 90, 49, 70),
+        aliasOf: 'El Monstruo\nSubterráneo',
+        height: '60m',
+        weight: '120,000T',
+        planet: 'La Tierra\n(Subsuelo)',
+        ultra: '@ULTRAMAN',
+        comentary: '“Presunta criatura aliada y defensora de los habitantes subterráneos de la Tierra, aquellos fueron capaces de capturarme e hipnotizar mi contraparte humana. Afortunadamente, ese tipo estados no es trasnferible a la hora de adquirir mi forma alienígena; lo que me permitió lidiar con esta mounstruosa bestia sin contratiempos”.',
+        imgDrawer: 'assets/023_telesdon_2.webp'
+      ),
+      Enemy(
+        'Jamila',
+        '',
+        '',
+         //Imágenes Principales
+        ['assets/010_kaiju_0.webp','assets/010_kaiju_1.webp','assets/010_kaiju_3.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 85, 85, 84),
+        aliasOf: '',
+        height: '',
+        weight: '',
+        planet: '',
+        ultra: '@ULTRAMAN',
+        comentary: '“”.',
+        imgDrawer: 'assets/010_kaiju_2.webp'
       ),
       // Enemy(
       //   '',

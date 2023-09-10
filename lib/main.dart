@@ -1,7 +1,9 @@
 //Tareas - EasterEgg - Cartas Estilo YUGIOH - Pasar Imágenes desplazando a los lados. 
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'enemy.dart';
-import 'package:device_preview/device_preview.dart';
+import 'package:flutter/services.dart';
+
 
 
 
@@ -13,11 +15,17 @@ const Color ultraOption = Color.fromARGB(223, 231, 229, 229);
 
 
 void main() {
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp]
+    );
+  
   runApp(
+    
     DevicePreview(
       enabled: true,
       builder: (context) => MyApp(),
     ),
+    
     // MyApp()
   );
 }
@@ -742,7 +750,7 @@ class _ImageChangerState extends State<ImageChanger> {
       onHorizontalDragUpdate: (details) {
         // Obtén la diferencia en la posición horizontal entre el inicio y el final del deslizamiento.
         double delta = details.primaryDelta ?? 0;
-        if (delta > 1.1) {
+        if (delta > 0) {
           // Deslizamiento hacia la izquierda.
           changeImageNext(); // Llama a la función correspondiente.
         }

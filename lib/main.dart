@@ -7,19 +7,21 @@ import 'package:flutter/services.dart';
 
 
 void main() {
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp]
-    );
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(MyApp());
+  });
   
-  runApp(
+  //runApp(
     
-    DevicePreview(
-      enabled: true,
-      builder: (context) => MyApp(),
-    ),
+    //DevicePreview(
+    //  enabled: true,
+    //  builder: (context) => MyApp(),
+    //),
     
-    // MyApp()
-  );
+    //MyApp()
+  //);
 }
 
 //Widget Principal

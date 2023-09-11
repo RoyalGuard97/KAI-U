@@ -634,6 +634,108 @@ final Map<String,List<Enemy>> ultraEnemies = {
         comentary: '“”.',
         imgDrawer: 'assets/034_skydon_2.webp'
       ),
+      Enemy(
+        'Seabozu',
+        '',
+        '',
+         //Imágenes Principales
+        ['assets/035_seabozu_0.webp','assets/035_seabozu_1.webp','assets/035_seabozu_3.webp','assets/035_seabozu_4.webp','assets/035_seabozu_5.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 29, 31, 21),
+        aliasOf: '',
+        height: '',
+        weight: '',
+        planet: '',
+        ultra: '@ULTRAMAN',
+        comentary: '“”.',
+        imgDrawer: 'assets/035_seabozu_2.webp'
+      ),
+      Enemy(
+        'Zaragas',
+        '',
+        '',
+         //Imágenes Principales
+        ['assets/036_zaragas_0.webp','assets/036_zaragas_1.webp','assets/036_zaragas_3.webp','assets/036_zaragas_4.webp','assets/036_zaragas_5.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 187, 184, 30),
+        aliasOf: '',
+        height: '',
+        weight: '',
+        planet: '',
+        ultra: '@ULTRAMAN',
+        comentary: '“”.',
+        imgDrawer: 'assets/036_zaragas_2.webp'
+      ),
+      Enemy(
+        'Geromimon',
+        '',
+        '',
+         //Imágenes Principales
+        ['assets/037_geronimon_0.webp','assets/037_geronimon_1.webp','assets/037_geronimon_3.webp','assets/037_geronimon_4.webp','assets/037_geronimon_5.webp','assets/037_geronimon_6.webp','assets/037_geronimon_7.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 129, 34, 167),
+        aliasOf: '',
+        height: '',
+        weight: '',
+        planet: '',
+        ultra: '@ULTRAMAN',
+        comentary: '“”.',
+        imgDrawer: 'assets/037_geronimon_2.webp'
+      ),
+      Enemy(
+        'Kira',
+        '',
+        '',
+         //Imágenes Principales
+        ['assets/038_kira_0.webp','assets/038_kira_1.webp','assets/038_kira_3.webp','assets/038_kira_4.webp','assets/038_kira_5.webp','assets/038_kira_6.webp','assets/038_kira_7.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 138, 108, 12),
+        aliasOf: '',
+        height: '',
+        weight: '',
+        planet: '',
+        ultra: '@ULTRAMAN',
+        comentary: '“”.',
+        imgDrawer: 'assets/038_kira_2.webp'
+      ),
+      Enemy(
+        'Alien Zetton',
+        '',
+        '',
+         //Imágenes Principales
+        ['assets/040_alien_zetton_0.webp','assets/040_alien_zetton_1.webp','assets/040_alien_zetton_3.webp','assets/040_alien_zetton_4.webp','assets/040_alien_zetton_5.webp','assets/040_alien_zetton_6.webp','assets/040_alien_zetton_7.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 24, 56, 146),
+        aliasOf: '',
+        height: '',
+        weight: '',
+        planet: '',
+        ultra: '@ULTRAMAN',
+        comentary: '“”.',
+        imgDrawer: 'assets/040_alien_zetton_2.webp'
+      ),
+      Enemy(
+        'Zetton',
+        '',
+        '',
+         //Imágenes Principales
+        ['assets/041_zetton_0.webp','assets/041_zetton_1.webp','assets/041_zetton_3.webp','assets/041_zetton_4.webp','assets/041_zetton_5.webp','assets/041_zetton_6.webp','assets/041_zetton_7.webp','assets/041_zetton_8.webp'],
+        //Habilidades del Kaiju
+        {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
+        color: Color.fromARGB(255, 179, 162, 13),
+        aliasOf: '',
+        height: '',
+        weight: '',
+        planet: '',
+        ultra: '@ULTRAMAN',
+        comentary: '“”.',
+        imgDrawer: 'assets/041_zetton_2.webp'
+      ),
       // Enemy(
       //   '',
       //   '',

@@ -1,10 +1,9 @@
 //Tareas - EasterEgg - Cartas Estilo YUGIOH - Pasar Imágenes desplazando a los lados. 
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:test/src/core/constants/data.dart';
 import 'package:test/src/ui/pages/HomeApp.dart';
-import 'package:flutter/services.dart';
-
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,15 +12,15 @@ void main() {
     runApp(MyApp());
   });
   
-  //runApp(
+  // runApp(
     
-    //DevicePreview(
-    //  enabled: true,
-    //  builder: (context) => MyApp(),
-    //),
+  //   DevicePreview(
+  //    enabled: true,
+  //    builder: (context) => MyApp(),
+  //   ),
     
-    //MyApp()
-  //);
+  //   // MyApp()
+  // );
 }
 
 //Widget Principal

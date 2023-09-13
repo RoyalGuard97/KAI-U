@@ -125,8 +125,8 @@ final Map<String,List<Enemy>> ultraEnemies = {
       ),
       Enemy(
         'Greenmons',
-        'La Muerte Verde',
-        'Descripción de Greenmons...',
+        'La Muerte Orgánica',
+        'Originalmente parte de una flora perteneciente a las costas de Japón. Se usó en una serie de experimentos que resultaron en un espécimen con desarrollo acelerado, como consecuencia, greenmons despertó cierta consciencia además de un fuerte de sentido de vengaza hacia aquellos involucrados en su desviación natural. Sus deseos asesinos aumentaron a la par de su colosal figura por lo que Ultraman debía enfrentarlo directamente.',
         ['assets/005_greenmons_0.webp','assets/005_greenmons_1.webp','assets/005_greenmons_3.webp'],
         //Habilidades del Kaiju
         {'Neblina Tóxica':'assets/greenmons_habs.webp', 'Adaptación de Forma': 'assets/greenmons_habs_1.webp'},
@@ -142,7 +142,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Gesura',
         'GLatinoamericano',
-        'Descripción de Gesura...',
+        'Proveniente de Latinoamérica, Gesura es una terrorífica leyenda conocida por todo marinero experimentado. Acusado de hundir un sinfin de navíos, los relatos hablan de como a través de este terrible acto lograba calmar su hambre voraz.\nEn un momento se llegaría a conocer la predilección de Gesura por el cacao, de modo que todo navío que lo transportara en su hábitat estaría en peligro. El Héroe de Rojo y Plata consiguió vencerlo mas no antes de recibir una buena muestra de su factor venenoso.',
         ['assets/006_gesura_0.webp','assets/006_gesura_1.webp','assets/006_gesura_3.webp'],
         //Habilidades del Kaiju
         {'Adaptación Submarina':'assets/gesura_habs.webp', 'Glándulas Venenosas': 'assets/gesura_habs_1.webp'},
@@ -158,7 +158,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Antlar',
         'El Verdugo Ancestral',
-        'Des',
+        'Esta ancestral criatura sometió a una antigua civilización que había perdido a su protector hacía mucho tiempo. Cuando la patrulla científica intentó detenerlo, su ira se desató poniendo en riesgo a los habitantes. \nEn su batalla contra Ultraman demostró su increíble resistencia; de no ser por un regalo místico dejado atrás por un legendario héroe, posiblemente Ultraman habría tenido muchos problemas.\nSorprendentemente es el primer enemigo en resistir completamente el poder de un Rayo Specium.',
         ['assets/007_antlar_0.webp','assets/007_antlar_1.webp','assets/007_antlar_3.webp'],
         //Habilidades del Kaiju
         {'Exoesqueleto':'assets/antlar_habs.webp', 
@@ -172,14 +172,14 @@ final Map<String,List<Enemy>> ultraEnemies = {
         planet: 'La Tierra (Bharadi)',
         ultra: '@ULTRAMAN',
         imgDrawer: 'assets/007_antlar_2.webp',
-        comentary: '“Es dificil de creer pero parece que un antecesor mío protegió la ciudad que este ser aterrorizaba sin fin, espero poder conocerlo para rendirle mi más profundo respeto.”'
+        comentary: '“Es dificil de creer pero parece que un antecesor mío protegió la ciudad que este ser aterrorizaba sinfín, espero poder conocerlo para rendirle mi más profundo respeto. Ahora que lo pienso... ¿Sabía de antemano que el Rayo Specium no serviría contra él?”'
       ),
       Enemy(
         'Red King',
         'El Kaiju Berserk',
-        'Descripción de Red King...',
+        'En una isla remota, un conjunto de criaturas bestiales se enfrentan pero sólo una es capaz de emerger como el vencedor. Siendo una monstruosidad de poder incontrolable toda acción que realizara pareciera poseer un componente asesino. Lamentablemente para él y su fuerza imparable se topó con un rival capaz de usar sus fortalezas contra él mismo, concluyendo en una apabullante derrota. Sin duda la criatura más barbárica y físicamente poderosa que alguna vez habitó la Tierra.',
          //Imágenes Principales
-        ['assets/008_redking_0.webp','assets/008_redking_1.webp','assets/008_redking_3.webp'],
+        ['assets/008_redking_0.webp','assets/008_redking_1.webp','assets/008_redking_3.webp','assets/008_redking_4.webp','assets/008_redking_5.webp','assets/008_redking_6.webp','assets/008_redking_7.webp'],
         //Habilidades del Kaiju
         {'Fuerza Extrema':'assets/redking_habs.webp'},
         color: Color.fromARGB(255, 80, 197, 25),

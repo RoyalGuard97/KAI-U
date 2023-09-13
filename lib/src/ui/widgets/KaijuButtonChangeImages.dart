@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:test/src/core/constants/enemy.dart';
 
@@ -40,19 +42,46 @@ class _ImageChangerState extends State<ImageChanger> {
     });   // 0 - 1 - 2 - 3
   }
 
+  Timer? _timer;
+  
+  void _startTimer(){
+    _timer = Timer.periodic(Duration(milliseconds: 100), (timer){
+      changeImageNext();
+    });
+  }
+
+  void _stopTimer(){
+    _timer?.cancel();
+  }
+
+  @override
+  void dispose(){
+    _stopTimer();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
 
     //Reconocimiento de Gestos - EFECTO IA
     return GestureDetector(
-      onHorizontalDragUpdate: (details) {
-        // Obtén la diferencia en la posición horizontal entre el inicio y el final del deslizamiento.
-        double delta = details.primaryDelta ?? 0;
-        if (delta > 0) {
-          // Deslizamiento hacia la izquierda.
-          changeImageNext(); // Llama a la función correspondiente.
-        }
+      // onHorizontalDragUpdate: (details) {
+      //   // Obtén la diferencia en la posición horizontal entre el inicio y el final del deslizamiento.
+      //   double delta = details.primaryDelta ?? 0;
+      //   if (delta > 0) {
+      //     // Deslizamiento hacia la izquierda.
+      //     changeImageNext(); // Llama a la función correspondiente.
+      //   }
+      // },
+      
+      onLongPress: (){
+        _startTimer();
       },
+
+      onLongPressEnd: (details) {
+        _stopTimer();
+      },
+
       child: Stack(
         alignment: Alignment.center,
         children: [

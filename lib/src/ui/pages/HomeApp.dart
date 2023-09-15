@@ -31,6 +31,7 @@ class HomeApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text("@UltraBrother M78"),
           backgroundColor: Colors.red,
@@ -80,7 +81,7 @@ class _CardSelectorState extends State<CardSelector> {
       children: [
         Expanded(child: Container()),
         Container(
-          height: screenHeight/1.5,
+          height: screenHeight/1.45,
           width: screenWidth,
           //Construir los ítems a mostrar
           child: PageView.builder(
@@ -167,25 +168,38 @@ class CardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     
     return Container(
 
-      // elevation: 5,
-      // margin: EdgeInsets.all(10),
       child: isSelected ? 
-      Padding (padding: EdgeInsets.all(10.0),child: Image.asset(card.img))
+      //Si la Carta está selecccionada se mostrará así:
+        Card(
+          margin: EdgeInsets.all(16.0),
+          elevation: 7,
+          child: AspectRatio(
+            aspectRatio: 9/16,
+            child: Padding( 
+              padding: EdgeInsets.all(8.0),
+              child: Image.asset(card.img, fit: BoxFit.fill,)),
+          )
+        )
+      
+      //Si la Carta no está seleccionada se mostrará así: 
       : Stack(
         alignment: Alignment.center, 
         children:[
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(card.img),
-                colorFilter: 
-                  ColorFilter.mode(Color.fromARGB(101, 32, 32, 32), BlendMode.darken),
-                //   fit: BoxFit.cover,
-                )
+          ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage(card.img),
+                  colorFilter: 
+                    ColorFilter.mode(Color.fromARGB(100, 17, 17, 17), BlendMode.darken),
+                  //   fit: BoxFit.cover,
+                  )
+                ),
               ),
             )
           ],

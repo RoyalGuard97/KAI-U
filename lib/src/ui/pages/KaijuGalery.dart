@@ -46,6 +46,7 @@ class _KaijuGaleryPageState extends State<KaijuGaleryPage> {
     });
   }
 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,6 +96,14 @@ class _KaijuGaleryPageState extends State<KaijuGaleryPage> {
                         decoration: BoxDecoration(
                           color: filterKaijuNames[index].color,
                           borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.3),
+                              blurRadius: 5,
+                              spreadRadius: 2.25,
+                              offset: Offset(0, 4),
+                            )
+                          ]
                         ),
                         child: Column(
                           children: [

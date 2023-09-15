@@ -22,6 +22,7 @@ class KaijuDetailsPage extends StatelessWidget {
     double screenWidth = size.width;
   
   return Scaffold(
+    resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text(
           enemy.name, //Nombre del Enemigo

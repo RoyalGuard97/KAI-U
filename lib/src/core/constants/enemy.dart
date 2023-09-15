@@ -76,7 +76,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         'El Errante Invasor',
         'Habitantes de un planeta extinto producto de pruebas nucleares. Errantes por el universo, se encontraban en búsqueda de un planeta habitable.\nLlegaron a la Tierra mediante un aterrizaje forzoso, no osbtante se dieron con la grata sorpresa de que nuestro planeta ostentaba lo que ellos deseaban en un nuevo mundo. Sus habilidades ilusorias fueron suficientes para superar a los humanos, pero para su mala suerte la Tierra estaba protegida por otro ser alienígena de gran poder.',
         //Imágenes Principales
-        ['assets/002_alien_baltan_0.webp','assets/002_alien_baltan_1.webp','assets/002_alien_baltan_3.webp'],
+        ['assets/002_alien_baltan_0.webp','assets/002_alien_baltan_1.webp','assets/002_alien_baltan_3.webp','assets/002_alien_baltan_4.webp','assets/002_alien_baltan_5.webp','assets/002_alien_baltan_6.webp','assets/002_alien_baltan_7.webp','assets/002_alien_baltan_8.webp'],
         //Habilidades del Kaiju
         {'Fusión Ilusoria':'assets/baltan_habs.webp', 'Vuelo': 'assets/baltan_habs_1.webp', 'Haz de Destrucción': 'assets/baltan_habs_2.webp', 'Gigantificación por Unión': 'assets/baltan_habs_3.webp'},
         color: const Color.fromARGB(255, 9, 64, 165),
@@ -94,7 +94,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         'El Devorador Eléctrico',
         'Registros del antiguo Japón contaban la historia de una bestia que había sido sellada por un antiguo y poderoso samurai. Desde aquel momento la criatura se mantendría en letargo mientras se desarrollaba cada vez más con el pasar del tiempo. \nEventualmente, el continuo avance tecnológico de los humanos haría que el alimento de Neronga escaceara. Resurgiendo y arremetiendo con algunas plantas eléctricas, su encuentro y derrota en manos de Ultraman fue inevitable.',
         //Imágenes Principales
-        ['assets/003_neronga_0.webp','assets/003_neronga_1.webp','assets/003_neronga_3.webp'],
+        ['assets/003_neronga_0.webp','assets/003_neronga_1.webp','assets/003_neronga_3.webp','assets/003_neronga_4.webp','assets/003_neronga_5.webp','assets/003_neronga_6.webp','assets/003_neronga_8.webp','assets/003_neronga_9.webp'],
         //Habilidades del Kaiju
         {'Invisibilidad':'assets/neronga_habs.webp', 'Manipulación Eléctrica': 'assets/neronga_habs_1.webp'},
         color :Color.fromARGB(255, 231, 197, 4),
@@ -111,7 +111,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         'El Pseudohumanoide Nuclear',
         'Habitante de un mundo submarino, esta entidad con rasgos humanoides vivía en paz y armonía hasta la inminente explosión de una bomba nuclear. Como consecuencia ragon mutó genéticamente hasta convertirse en un gigante único en su especie. Ya sea por inconsciencia o venganza, este ser se volvería extremadamente peligroso; para colmo de males, este alojaba en su cuerpo una segunda bomba atómica sin estallar.\nSin duda fue complicado para Ultraman lidiar con la situación.',
         //Imágenes Principales
-        ['assets/004_ragon_0.webp','assets/004_ragon_1.webp','assets/004_ragon_3.webp'],
+        ['assets/004_ragon_0.webp','assets/004_ragon_3.webp','assets/004_ragon_4.webp','assets/004_ragon_5.webp','assets/004_ragon_6.webp','assets/004_ragon_7.webp','assets/004_ragon_8.webp'],
         //Habilidades del Kaiju
         {'Rayo Radioactivo':'assets/ragon_habs.webp', 'Adaptación Submarina': 'assets/ragon_habs_1.webp'},
         color: const Color.fromARGB(255, 9, 165, 69),
@@ -194,7 +194,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Gabora',
         'El Devorador Radioactivo',
-        'Descripción de Gabora',
+        'De los Kaijus más peligrosos que habitaron la Tierra en la edad contemporánea. Desde el subsuelo Gabora emergería tras una tormeta arrasadora. Si bien su presencia ya causaba estragos en pueblos aledaños, mayor sería la preocupación al descubrir su alimento predilecto: Uranio. Al igual que Neronga su presencia era incompatible con los avances de la humanidad. Depósitos de Uranio comprometidos causarían un efecto nefasto para la naturaleza. Ultraman debía intervenir antes de presenciar un horror inimaginable.',
          //Imágenes Principales
         ['assets/009_gabora_0.webp','assets/009_gabora_1.webp','assets/009_gabora_3.webp'],
         //Habilidades del Kaiju
@@ -205,13 +205,13 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '25,000T',
         planet: 'La Tierra (Tokio)',
         ultra: '@ULTRAMAN',
-        comentary: '“Una criatura de esta naturaleza haría peligrar a toda civilización de tipo I. Dado a que su fuente de alimento es un material radioactivo es posible que toda interacción que tenga con tecnología humana sea por lo menos incómoda. ¿Será posible que existan más especímenes de estos por el universo? ”',
+        comentary: '“Una criatura de esta naturaleza haría peligrar a toda civilización de tipo I. Dado a que su fuente de alimento es un material radioactivo es posible que toda interacción que tenga con tecnología humana sea por lo menos incómoda para el medio ambiente ¿Será posible que existan más especímenes de estos por el universo? ”',
         imgDrawer: 'assets/009_gabora_2.webp'
       ),
       Enemy(
         'Jirahs',
         'El Aberrante Experimento',
-        'Descripción de Jirahs',
+        'Conocida es la leyenda del moustruo del Lago Ness, sin embargo... ¿Quién te dijo que era solo una leyenda? Un reconocido y renombrado científico lograría estudiar a esta majestuosa criatura para dominarla. A través de diferentes experimentos lograría engendrar lo que conocemos como Jirahs, un increible Kaiju muy parecido al que llaman Rey de los Mostruos. Tras revelarse contra su amo, Jirahs enfrentaría a Ultraman en una de las batallas mas tortuosas y bizarras de la Serie',
          //Imágenes Principales
         ['assets/010_jirahs_0.webp','assets/010_jirahs_1.webp','assets/010_jirahs_3.webp'],
         //Habilidades del Kaiju
@@ -228,7 +228,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Gango',
         'El Monstruo Onírico',
-        'Descripción de Gango',
+        'De Origen Lovecraftniano, Gango es una manifestación de una mente villanesca y retorcida. Desde los cielos un extraño elemento aterrizaría en la Tierra. Tras ser analizado se confirmaría que es capaz de interactuar con seres inteligentes para manifestar sus deseos inmediatos. Una vez Gango es plasmado en la realidad entraría en descontrol combatiendo contra Ultraman hasta que su amo logró recobrar la consciencia y deshacer su existencia.',
          //Imágenes Principales
         ['assets/011_gango_0.webp','assets/011_gango_1.webp','assets/011_gango_3.webp'],
         //Habilidades del Kaiju
@@ -239,7 +239,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '60 ~ 60,000T',
         planet: 'Indeterminado',
         ultra: '@ULTRAMAN',
-        comentary: '“Antes de adquirir forma este Kaiju era un material capaz de interactuar con las ondas cerebrales de seres vivos inteligentes. A pesar del potencial ilimitado que tiene para hacer del universo un lugar mejor, lo ideal es apartarlo de toda interacción... ya que incluso el ser más noble ha tenido pensamientos no tan gráciles en algún momento”.',
+        comentary: '“Es increíble pensar en un material capaz de interactuar con nuestras ondas cerebrales. A pesar de su potencial ilimitado para lograr la paz en el universo lo ideal es apartarlo de toda interacción... ya que incluso el ser más noble ha tenido pensamientos no tan gráciles en algún momento”.',
         imgDrawer: 'assets/011_gango_2.webp'
       ),
 
@@ -269,10 +269,10 @@ final Map<String,List<Enemy>> ultraEnemies = {
         //Habilidades del Kaiju
         {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
         color: Color.fromARGB(255, 89, 184, 34),
-        aliasOf: 'El Monstruo de la Momia',
+        aliasOf: 'El Monstruo de la\nMomia',
         height: '30m',
         weight: '25,000T',
-        planet: 'La Tierra (Okutama)',
+        planet: 'La Tierra\n(Okutama)',
         ultra: '@ULTRAMAN',
         comentary: '“Son obvias las razones, pero son pocas las criaturas del universo que permitan cabalgar a los de mi especie. Fue una experiencia novedosa, he de admitir.\nLástima que este sirviente sin rumbo terminó convirtiéndose en un peligro incontrolable”.',
         imgDrawer: 'assets/013_dodongo_2.webp'

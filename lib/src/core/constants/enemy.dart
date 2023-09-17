@@ -58,7 +58,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         'El Fugitivo Intergaláctico', 
         'Oficialmente es el primer enemigo que Ultraman derrotó en su llegada a la Tierra.\nSiendo un peligroso fugitivo intergaláctico su arribo a nuestro planeta fue tan aparatoso que incluso provocó la muerte de un inocente. \nEscondido en un lago para recuperar energías, se encontraba dispuesto a eliminar a cualquiera que osara irrumpir en la zona. En su batalla contra Ultraman mostró resistencia al no querer ser nuevamente aprisionado pero finalmente cayó por el novedoso Rayo Specium.',
         //Imágenes Principales
-        ['assets/001_bemular_0.webp', 'assets/001_bemular_1.webp', 'assets/001_bemular_3.webp'],
+        ['assets/001_bemular_0.webp', 'assets/001_bemular_1.webp', 'assets/001_bemular_3.webp','assets/001_bemular_4.webp','assets/001_bemular_5.webp','assets/001_bemular_6.webp'],
         //Habilidades del Kaiju
         {'Onda de Calor Traslúcida':'assets/bemular_habs.webp', 'Adaptación Submarina': 'assets/bemular_habs_1.webp', 'Esfera de Viaje': 'assets/bemular_habs_2.webp'},
         color: Color.fromARGB(255, 146, 97, 5),
@@ -127,7 +127,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         'Greenmons',
         'La Muerte Orgánica',
         'Originalmente parte de una flora perteneciente a las costas de Japón. Se usó en una serie de experimentos que resultaron en un espécimen con desarrollo acelerado, como consecuencia, greenmons despertó cierta consciencia además de un fuerte de sentido de vengaza hacia aquellos involucrados en su desviación natural. Sus deseos asesinos aumentaron a la par de su colosal figura por lo que Ultraman debía enfrentarlo directamente.',
-        ['assets/005_greenmons_0.webp','assets/005_greenmons_1.webp','assets/005_greenmons_3.webp'],
+        ['assets/005_greenmons_0.webp','assets/005_greenmons_1.webp','assets/005_greenmons_3.webp','assets/005_greenmons_5.webp','assets/005_greenmons_6.webp','assets/005_greenmons_7.webp','assets/005_greenmons_8.webp','assets/005_greenmons_9.webp'],
         //Habilidades del Kaiju
         {'Neblina Tóxica':'assets/greenmons_habs.webp', 'Adaptación de Forma': 'assets/greenmons_habs_1.webp'},
         color: const Color.fromARGB(255, 4, 180, 72),
@@ -143,7 +143,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         'Gesura',
         'GLatinoamericano',
         'Proveniente de Latinoamérica, Gesura es una terrorífica leyenda conocida por todo marinero experimentado. Acusado de hundir un sinfin de navíos, los relatos hablan de como a través de este terrible acto lograba calmar su hambre voraz.\nEn un momento se llegaría a conocer la predilección de Gesura por el cacao, de modo que todo navío que lo transportara en su hábitat estaría en peligro. El Héroe de Rojo y Plata consiguió vencerlo mas no antes de recibir una buena muestra de su factor venenoso.',
-        ['assets/006_gesura_0.webp','assets/006_gesura_1.webp','assets/006_gesura_3.webp'],
+        ['assets/006_gesura_0.webp','assets/006_gesura_1.webp','assets/006_gesura_3.webp','assets/006_gesura_4.webp','assets/006_gesura_5.webp','assets/006_gesura_6.webp'],
         //Habilidades del Kaiju
         {'Adaptación Submarina':'assets/gesura_habs.webp', 'Glándulas Venenosas': 'assets/gesura_habs_1.webp'},
         color: Color.fromARGB(255, 7, 77, 34),
@@ -159,7 +159,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         'Antlar',
         'El Verdugo Ancestral',
         'Esta ancestral criatura sometió a una antigua civilización que había perdido a su protector hacía mucho tiempo. Cuando la patrulla científica intentó detenerlo, su ira se desató poniendo en riesgo a los habitantes. \nEn su batalla contra Ultraman demostró su increíble resistencia; de no ser por un regalo místico dejado atrás por un legendario héroe, posiblemente Ultraman habría tenido muchos problemas.\nSorprendentemente es el primer enemigo en resistir completamente el poder de un Rayo Specium.',
-        ['assets/007_antlar_0.webp','assets/007_antlar_1.webp','assets/007_antlar_3.webp'],
+        ['assets/007_antlar_0.webp','assets/007_antlar_1.webp','assets/007_antlar_3.webp','assets/007_antlar_4.webp','assets/007_antlar_5.webp','assets/007_antlar_6.webp','assets/007_antlar_7.webp','assets/007_antlar_8.webp','assets/007_antlar_9.webp'],
         //Habilidades del Kaiju
         {'Exoesqueleto':'assets/antlar_habs.webp', 
         'Rayo Magnético': 'assets/antlar_habs_1.webp',

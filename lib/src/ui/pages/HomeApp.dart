@@ -18,7 +18,7 @@ final List<UltraInfo> cards = [
     ),
     UltraInfo(
       name: "@ULTRASEVEN",
-      img: "assets/ultraseven.jpg",
+      img: "assets/ultraman_fe.png",
     ),
     UltraInfo(
       name: "@ULTRAMAN JACK",

@@ -228,7 +228,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Gango',
         'El Monstruo Onírico',
-        'De Origen Lovecraftniano, Gango es una manifestación de una mente villanesca y retorcida. Desde los cielos un extraño elemento aterrizaría en la Tierra. Tras ser analizado se confirmaría que es capaz de interactuar con seres inteligentes para manifestar sus deseos inmediatos. Una vez Gango es plasmado en la realidad entraría en descontrol combatiendo contra Ultraman hasta que su amo logró recobrar la consciencia y deshacer su existencia.',
+        'De Origen Lovecraftniano, Gango es una manifestación de una mente villanesca y retorcida. Desde los cielos un extraño elemento aterrizaría en la Tierra. Tras ser analizado se confirmaría que es capaz de interactuar con seres inteligentes para manifestar sus deseos inmediatos. Una vez Gango es plasmado en la realidad entraría en descontrol combatiendo así contra Ultraman. Finalmente su creador lograría recobrar lucidez y deshacer su existencia.',
          //Imágenes Principales
         ['assets/011_gango_0.webp','assets/011_gango_1.webp','assets/011_gango_3.webp'],
         //Habilidades del Kaiju
@@ -246,7 +246,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Mummy Man',
         'El Amo Ancestral',
-        'Descripción de Mummy Man',
+        'Antiguo ser terrestre de hace milenios, fue descubierto en la edad comtemporánea por un grupo de científicos. Tras diversos intentos de investigación, en las instalaciones donde yacía el supuesto cuerpo; se canalizaría energía electrica suficiente para reanimar a la aterradora momia. Siendo el verdugo de múltiples vidas humanas se le intentó contener hasta que su existencia se volvió insostenible. Finalizando su vida junto a un grito gutural despertaría a una peligrosa criatura legendaria.',
          //Imágenes Principales
         ['assets/012_mummy_man_0.webp','assets/012_mummy_man_1.webp','assets/012_mummy_man_3.webp'],
         //Habilidades del Kaiju
@@ -263,7 +263,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Dodongo',
         'El Equino Dracónico',
-        'Descripción de Dodongo',
+        'Contraparte simbiótica de una momia antigua. Es posible que fuera el protector de su amo antepasado. Muerta su figura superior, Dodongo se dispuso a plasmar su venganza contra esta nueva era; destruyendo todo a su paso, llegaría una mina donde aterrorizaría a los trabajadores. La Patrulla Científica hizo lo posible para detenerlo propinándole daño pero finalmente contarían con Ultraman para darle un triste tiro de gracia.',
          //Imágenes Principales
         ['assets/013_dodongo_0.webp','assets/013_dodongo_1.webp','assets/013_dodongo_3.webp'],
         //Habilidades del Kaiju
@@ -280,7 +280,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Pestar',
         'La Estrella Petrófaga',
-        'Descripción de Pestar',
+        'Habitante de las profundidades y petrófago por excelencia. Pestar es potencialmente la criatura más peligrosa que alguna vez habitó el océano. Dado a sus constantes intersecciones a navíos o centrales petroleras, la contaminación marina iba en alarmante ascenso. Curiosamente Ultraman tuvo que lidiar más con las consecuencias de este Mounstruo que contra él mismo.',
          //Imágenes Principales
         ['assets/014_pestar_0.webp','assets/014_pestar_1.webp','assets/014_pestar_3.webp'],
         //Habilidades del Kaiju
@@ -291,13 +291,13 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '25,000T',
         planet: 'La Tierra\n(Profundidades)',
         ultra: '@ULTRAMAN',
-        comentary: '“Enfrentarlo supuso un atentado al medio ambiente, es asombroso pero de alguna forma esta criatura logró transformar combustibles fósiles en parte de su alimentación. Dejarlo sin represalias dejaría un desastre ambiental irreparable y atacarlo con vehemencia podría suponer una reacción en cadena incontrolable. Ante estos casos es mejor ir codo a codo con la humanidad”.',
+        comentary: '“Es asombroso pero de alguna forma esta criatura logró transformar combustibles fósiles en parte de su alimentación. Dejarlo sin represalias supondría un desastre ambiental irreparable y atacarlo con vehemencia podría suponer una reacción en cadena incontrolable. Ante estos casos es mejor ir codo a codo con la humanidad”.',
         imgDrawer: 'assets/014_pestar_2.webp'
       ),
       Enemy(
         'Gamakugira',
         'El Cetáceo Mounstruoso',
-        'Descripción de Gamakugira',
+        'La figura de un cetáceo monstruoso se asomaba por las costas de Japón. Dispuesto a mermar todas las ostras de las inmediaciones para alimentarse de sus perlas, Gamakugira fue un peligro que llevo a la Patrulla Científica emplear múltiples vías de acción, entre ellas, colocar un cohete en la "retaguardia" del Kaiju. Por más ridículo que suene, es así que Ultraman logró interceptarlo en el aire haciendolo explotar en trizas... ',
          //Imágenes Principales
         ['assets/015_gamakujira_0.webp','assets/015_gamakujira_1.webp','assets/015_gamakujira_3.webp'],
         //Habilidades del Kaiju
@@ -314,7 +314,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Gavadon',
         'El Mounstruo de Ensueño',
-        'Descripción de Gavadon',
+        'Unos niños con cierto talento para el dibujo e imaginación lograron plasmar lo que sería un Kaiju de su autoría. Tras un fenómeno milagroso unos rayos cósmicos logran darle vida a esta figura. Dado a lo poco impresionante de su primera forma, los niños logran darle un diseño más complejo haciendo de Gavadon una criatura, aunque pasiva, molesta para los habitantes. Ultraman debe deshacerse de Gavadon mientra respeta la creación de estos inocentes niños.',
          //Imágenes Principales
         ['assets/016_gavadon_0.webp','assets/016_gavadon_1.webp','assets/016_gavadon_3.webp'],
         //Habilidades del Kaiju
@@ -325,13 +325,13 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '40,000T',
         planet: 'La Tierra\n(Rayos Cósmicos)',
         ultra: '@ULTRAMAN',
-        comentary: '“Escuchar a aquellos niños rogarme que no destruyera a su creación me conmovió, supongo que sentían que de alguna forma era su responsabilidad. Si bien no pude mantenerlo en la Tierra por los diferentes problemas que causaría, me encargué de inmortalizar su existencia en las estrellas”.',
+        comentary: '“Escuchar a aquellos niños rogarme por mantener a su creación me conmovió, supongo que sentían que de alguna forma era su responsabilidad. Si bien no pude dejarlo en la Tierra por los diferentes problemas que causaría, me encargué de inmortalizar su existencia en las estrellas”.',
         imgDrawer: 'assets/016_gavadon_2.webp'
       ),
       Enemy(
         'Alien Baltan II',
         'La Reencarnación de la Venganza',
-        'Descripción de Alien Baltan II',
+        'Tras su primer encuentro con Ultraman en la Tierra, los Baltan´s sobrevivientes consiguieron replegarse en un planeta de Nombre "R" donde formularon su venganza. El objetivo era separar a Ultraman de la Tierra para atacarlo por dos frentes. Primero secuestrando una nave espacial llevándola al Planeta R y segundo atacando un aeropuerto con gran concurrencia. Sin embargo, Ultraman ya mucho más experimentado como heróe terrestre logró resolverlo de forma magistral.',
          //Imágenes Principales
         ['assets/017_alien_baltan_0.webp','assets/017_alien_baltan_1.webp','assets/017_alien_baltan_3.webp'],
         //Habilidades del Kaiju
@@ -342,22 +342,22 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '0 ~ 15,000T',
         planet: 'Planeta R',
         ultra: '@ULTRAMAN',
-        comentary: '“Tal y como registré los Baltan son enemigos muy persistentes, al parecer un grupo de rezagados consiguió asilo en un planeta no tan agraciado como la Tierra. Si bien crearon un plan exhaustivo para mantenerme alejado de la acción, no contaron con mi poderosa pero extenuante habilidad de teletransportación”.',
+        comentary: '“Si bien crearon un plan exhaustivo para mantenerme alejado de la acción, no contaron con mi poderosa pero extenuante habilidad de teletransportación, aunque debo admitir que estudiaron bien como contrarrestar alguna de mis técnicas”.',
         imgDrawer: 'assets/017_alien_baltan_2.webp'
       ),
       Enemy(
         'Bullton',
         'Laͣ Вⷡeͤs͛ᴛⷮiͥaͣ dͩeͤ laͣ Cͨuͧaͣrͬᴛⷮaͣ Dͩiͥmͫeͤns͛iͥoͦ́n',
-        'NO',
+        '˙ɐɯɹoɟ uɐp ǝl ǝnb sɐzǝıd sɐl ɹınɹʇsǝp ʎ olɹɐʇoɹɹǝp ɐɹɐd pɐpıunʇɹodo ɐun uoɔ ɹɐʇuoɔ ɐɹɐd uóıɔɐuıƃɐɯı ǝ ɐllɐʇɐq uǝ bı ns opoʇ ɹɐsn ǝnb oʌnʇ uɐɯɐɹʇln ,uóısuǝɯıp ɐɹǝɔɹǝʇ ɐl uǝ odɯǝıʇ-oıɔɐdsǝ lǝ ɹɐuıɯop ɐɹɐd ǝʇuǝʇodıuɯo ısɐɔ ɹǝpod un uoɔ ˙uóısuǝɯıp ɐʇ4 ɐl uǝ ǝlqısod olos ɐɹnʇɐıɹɔ ɐun ɐ uɐíɹɐʇɹǝdsǝp ǝsɹɐuoısnɟ ɹɐɹƃol lɐ ˙ɐɹʇo ɐ ɐun sɐpíɐɹʇɐ uǝʇuǝıs ǝs sɐzǝıd sɐqɯɐ ɐɯɹoɟ ɐunƃlɐ ǝp ,ouɐɯnɥ oʇuǝıɯıpuǝʇuǝ lǝp állɐ sáɯ sǝpɐpǝıdoɹd ɹɐɹʇsoɯ uǝɔǝɹɐd soʇsǝ opuɐnɔ ˙sɐɔıɟíʇuǝıɔ sɐıɔuǝuıɯǝ ɹod sopɐƃıʇsǝʌuı uos sopıɔouoɔsǝp soʇuǝɯƃɐɹɟ sop',
          //Imágenes Principales
         ['assets/018_bullton_0.webp','assets/018_bullton_1.webp','assets/018_bullton_3.webp','assets/018_bullton_4.webp','assets/018_bullton_5.webp'],
         //Habilidades del Kaiju
         {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
         color: Color.fromARGB(255, 179, 18, 85),
-        aliasOf: 'NO',
-        height: 'NO',
-        weight: 'NO',
-        planet: 'NO',
+        aliasOf: 'p4 ǝʇuǝ lǝ',
+        height: 'ɯ06',
+        weight: 'ʇ000,06',
+        planet: 'ǝlqıuodsıp ou',
         ultra: '@ULTRAMAN',
         comentary: '“@#!?~”.',
         imgDrawer: 'assets/018_bullton_2.webp'
@@ -365,7 +365,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Alien Zarab',
         'El Hermano de Otro Mundo',
-        'Descripción de Alien Zarab',
+        'Un amigable alienígena aparece en la ciudad de Tokio para salvar la población. ¡Patrañas! Este aterrador ser solo deseaba ganarse el favor de la humanidad. Pasando por la Patrulla científica hasta los altos mandos de Japón, su objetivo era sembrar la discordia en cuanto al rol de Ultraman como héroe, siendo el primer paso para que los humanos se destruyeran así mismos, todo por mera diversión. Para su mala suerte existen humanos que confían ciegamente en Ultraman, lo cual le permitió limpiar su nombre acabando con el impostor más peligroso de la Galaxia.',
          //Imágenes Principales
         ['assets/019_alien_zarab_0.webp','assets/019_alien_zarab_1.webp','assets/019_alien_zarab_3.webp'],
         //Habilidades del Kaiju
@@ -382,16 +382,16 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Aboras & Banila',
         'El Dúo Infernal',
-        'Descripción de Aboras & Banila',
+        'Dos figuras demoníacas eran el terror de alguna civilización anterior a la nuestra. De alguna forma logran capturarlos en cápsulas diferentes. Dado a que la advertencia para mantener selladas las cápsulas estaba en un idioma antiguo, la curiosidad de los humanos fue mucho mayor... Con ambas figuras traídas a la actualidad era solo cuestión de tiempo para que arrasaran con el país. Aunque fuera de todo pronóstico estas dos bestias se enfrentarían dando como ganador a la contraparte Azul. Es así que Ultraman debía enfrentar al Alfa de este par de Kaijus, empleando 3 Rayos Specium consecutivos.',
          //Imágenes Principales
         ['assets/020_aboras_banila_0.webp','assets/020_aboras_banila_1.webp','assets/020_aboras_banila_3.webp'],
         //Habilidades del Kaiju
         {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
         color: Color.fromARGB(255, 151, 37, 185),
-        aliasOf: '',
-        height: '',
-        weight: '',
-        planet: '',
+        aliasOf: 'El Azul & El Rojo',
+        height: '60m & 55m',
+        weight: '20,000T & 20,000T',
+        planet: 'La Tierra (Antigua)',
         ultra: '@ULTRAMAN',
         comentary: '“Este dúo de bestias ancestrales aterrorizaron a alguna antigua civilización terrestre. De haberme enfrentado a ellas como un equipo es posible que hubiese visto el abismo de la derrota. Para nuestra fortuna estas criaturas parecen ser antagónicas la una con la otra”.',
         imgDrawer: 'assets/020_aboras_banila_2.webp'
@@ -450,7 +450,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Jamila',
         'La Deshumanización Encarnada',
-        'Descripción de Jamila',
+        'Originario de la Tierra, Jamila era un astronauta con grandes ambiciones en la vida. Siendo elegido para una misión espacial de alto calibre fue víctima de la negligencia en la calidad de seguridad relacionada con la misión. Presumiblemente varado en el espacio terminaría en un planeta desconocido. El antes humano dado a la ciencia se transformó entonces en una horrenda criatura llena de resentimiento y venganza.',
          //Imágenes Principales
         ['assets/024_jamila_0.webp','assets/024_jamila_1.webp','assets/024_jamila_3.webp'],
         //Habilidades del Kaiju
@@ -461,7 +461,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '10,000T',
         planet: 'La Tierra\n(Interacción Cósmica)',
         ultra: '@ULTRAMAN',
-        comentary: '“Aún cuando la venganza no es el camino de un Ultra, puedo comprender el sentir de esta criatura. La temeraria carrera espacial llevada por los humanos emplearon vidas valiosas como recursos, era solo cuestión de tiempo para enfrentar las consencuencias. No hubo orgullo alguno en batalla...”.',
+        comentary: '“Aún cuando la venganza no es el camino de un Ultra, puedo comprender el sentir de esta criatura. Usar a seres vivos como recursos para lograr hitos científicos inmediatos es despreciable. No hubo orgullo alguno en batalla... solo una desoladora tristeza”.',
         imgDrawer: 'assets/024_jamila_2.webp'
       ),
       Enemy(
@@ -705,7 +705,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Alien Zetton',
         '',
-        '',
+        'Considerados grandes estrategas militares, estos alienígenas fueron la primera amenaza a gran escala que enfrentaría la humanidad. Estudiando a los humanos presumiblemente desde los años 30´s los Zetton planearían conquistar la Tierra. Aún con la variable de Ultraman tomada en cuenta, los Zetton no solo no se rindieron sino que simplemente desarrollarían un arma capaz de derrotar al Paladín de la Justicia.',
          //Imágenes Principales
         ['assets/040_alien_zetton_0.webp','assets/040_alien_zetton_1.webp','assets/040_alien_zetton_3.webp','assets/040_alien_zetton_4.webp','assets/040_alien_zetton_5.webp','assets/040_alien_zetton_6.webp','assets/040_alien_zetton_7.webp'],
         //Habilidades del Kaiju
@@ -716,13 +716,13 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '',
         planet: '',
         ultra: '@ULTRAMAN',
-        comentary: '“”.',
+        comentary: '“Los Zetton son reconocidos por sus estrategias enrevesadas y engañosas, no por nada tienen una elevada habilidad de infiltración, su capacidad de estudio e investigación en cuanto a sus objetivos es loable”.',
         imgDrawer: 'assets/040_alien_zetton_2.webp'
       ),
       Enemy(
         'Zetton',
         '',
-        '',
+        'El Arma definitiva de los Aliens Zetton. Esta criatura posee un poder físico equiparable al de RedKing, las capacidades de desorientación de los Baltan, la forma insectoide de Keylla, un caparazón similar al de Kemular lo que le proporciona una densidad impresionante. Capaz de emplear técnicas y habilidades que contrarrestan hasta el más mínimo movimiento de Ultraman, era obvio que sus amos lo diseñaron con un solo objetivo... ser el verdugo de nuestro héroe Ultraman.',
          //Imágenes Principales
         ['assets/041_zetton_0.webp','assets/041_zetton_1.webp','assets/041_zetton_3.webp','assets/041_zetton_4.webp','assets/041_zetton_5.webp','assets/041_zetton_6.webp','assets/041_zetton_7.webp','assets/041_zetton_8.webp'],
         //Habilidades del Kaiju
@@ -733,7 +733,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '',
         planet: '',
         ultra: '@ULTRAMAN',
-        comentary: '“”.',
+        comentary: '“Esta es una derrota que aún llevo al corazón. Recreé este combate cientos de veces en mi mente y aún en mis máximas capacidades del momento solo puedo divisar un empate. Si los humanos no se hubieran hecho cargo con su tecnología experimental probablemente la historia sería diferente... o no? Zoffy?”.',
         imgDrawer: 'assets/041_zetton_2.webp'
       ),
       // Enemy(

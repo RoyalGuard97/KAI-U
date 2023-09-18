@@ -17,13 +17,13 @@ final List<UltraInfo> cards = [
       img: "assets/ultraman.jpg",
     ),
     UltraInfo(
-      name: "@ULTRASEVEN",
+      name: "@REBIRTH",
       img: "assets/ultraman_fe.png",
     ),
-    UltraInfo(
-      name: "@ULTRAMAN JACK",
-      img: "assets/ultraman_jack.webp",
-    ),
+    // UltraInfo(
+    //   name: "@ULTRAMAN JACK",
+    //   img: "assets/ultraman_jack.webp",
+    // ),
 ];
 
 //Págína Home

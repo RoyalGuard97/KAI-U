@@ -56,7 +56,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Bemular',
         'El Fugitivo Intergaláctico', 
-        'Oficialmente es el primer enemigo que Ultraman derrotó en su llegada a la Tierra.\nSiendo un peligroso fugitivo intergaláctico su arribo a nuestro planeta fue tan aparatoso que incluso provocó la muerte de un inocente. \nEscondido en un lago para recuperar energías, se encontraba dispuesto a eliminar a cualquiera que osara irrumpir en la zona. En su batalla contra Ultraman mostró resistencia al no querer ser nuevamente aprisionado pero finalmente cayó por el novedoso Rayo Specium.',
+        'Siendo un peligroso fugitivo intergaláctico su arribo a nuestro planeta fue tan aparatoso que incluso provocó la muerte de un inocente. \nEscondido en un lago para recuperar energías, se encontraba dispuesto a eliminar a cualquiera que osara irrumpir en la zona. En su batalla contra Ultraman mostró resistencia al no querer ser nuevamente aprisionado pero finalmente cayó por el novedoso Rayo Specium. Oficialmente es el primer enemigo que Ultraman derrotó en su llegada a la Tierra.',
         //Imágenes Principales
         ['assets/001_bemular_0.webp', 'assets/001_bemular_1.webp', 'assets/001_bemular_3.webp','assets/001_bemular_4.webp','assets/001_bemular_5.webp','assets/001_bemular_6.webp'],
         //Habilidades del Kaiju
@@ -74,7 +74,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Alien Baltan',
         'El Errante Invasor',
-        'Habitantes de un planeta extinto producto de pruebas nucleares. Errantes por el universo, se encontraban en búsqueda de un planeta habitable.\nLlegaron a la Tierra mediante un aterrizaje forzoso, no osbtante se dieron con la grata sorpresa de que nuestro planeta ostentaba lo que ellos deseaban en un nuevo mundo. Sus habilidades ilusorias fueron suficientes para superar a los humanos, pero para su mala suerte la Tierra estaba protegida por otro ser alienígena de gran poder.',
+        'Habitantes de un planeta extinto producto de pruebas nucleares. Errantes por el universo, se encontraban en búsqueda de un planeta habitable.\nLlegaron a la Tierra mediante un aterrizaje forzoso, no osbtante, se dieron con la grata sorpresa de que nuestro planeta ostentaba lo que ellos deseaban en un nuevo mundo. Sus habilidades ilusorias fueron suficientes para superar a los humanos, pero para su mala suerte la Tierra estaba protegida por otro ser alienígena de gran poder.',
         //Imágenes Principales
         ['assets/002_alien_baltan_0.webp','assets/002_alien_baltan_1.webp','assets/002_alien_baltan_3.webp','assets/002_alien_baltan_4.webp','assets/002_alien_baltan_5.webp','assets/002_alien_baltan_6.webp','assets/002_alien_baltan_7.webp','assets/002_alien_baltan_8.webp'],
         //Habilidades del Kaiju
@@ -126,7 +126,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Greenmons',
         'La Muerte Orgánica',
-        'Originalmente parte de una flora perteneciente a las costas de Japón. Se usó en una serie de experimentos que resultaron en un espécimen con desarrollo acelerado, como consecuencia, greenmons despertó cierta consciencia además de un fuerte de sentido de vengaza hacia aquellos involucrados en su desviación natural. Sus deseos asesinos aumentaron a la par de su colosal figura por lo que Ultraman debía enfrentarlo directamente.',
+        'Originalmente parte de una flora perteneciente a las costas de Japón. Se usó en una serie de experimentos que resultaron en un espécimen con desarrollo acelerado, como consecuencia, Greenmons despertó cierta consciencia además de un fuerte de sentido de vengaza hacia aquellos involucrados en su desviación natural. Sus deseos asesinos aumentaron a la par de su colosal figura por lo que Ultraman debía enfrentarlo directamente.',
         ['assets/005_greenmons_0.webp','assets/005_greenmons_1.webp','assets/005_greenmons_3.webp','assets/005_greenmons_5.webp','assets/005_greenmons_6.webp','assets/005_greenmons_7.webp','assets/005_greenmons_8.webp','assets/005_greenmons_9.webp'],
         //Habilidades del Kaiju
         {'Neblina Tóxica':'assets/greenmons_habs.webp', 'Adaptación de Forma': 'assets/greenmons_habs_1.webp'},
@@ -141,8 +141,8 @@ final Map<String,List<Enemy>> ultraEnemies = {
       ),
       Enemy(
         'Gesura',
-        'GLatinoamericano',
-        'Proveniente de Latinoamérica, Gesura es una terrorífica leyenda conocida por todo marinero experimentado. Acusado de hundir un sinfin de navíos, los relatos hablan de como a través de este terrible acto lograba calmar su hambre voraz.\nEn un momento se llegaría a conocer la predilección de Gesura por el cacao, de modo que todo navío que lo transportara en su hábitat estaría en peligro. El Héroe de Rojo y Plata consiguió vencerlo mas no antes de recibir una buena muestra de su factor venenoso.',
+        'El Kaiju Latinoamericano',
+        'Proveniente de Latinoamérica, Gesura es una terrorífica leyenda conocida por todo marinero respetadp. Acusado de hundir un sinfin de navíos, los relatos hablan de como a través de este terrible acto lograba calmar su hambre voraz.\nEn un momento se llegaría a conocer la predilección de Gesura por el cacao, de modo que todo navío que lo transportara en su hábitat estaría en peligro. El Héroe de Rojo y Plata consiguió vencerlo mas no antes de recibir una buena muestra de su factor venenoso.',
         ['assets/006_gesura_0.webp','assets/006_gesura_1.webp','assets/006_gesura_3.webp','assets/006_gesura_4.webp','assets/006_gesura_5.webp','assets/006_gesura_6.webp'],
         //Habilidades del Kaiju
         {'Adaptación Submarina':'assets/gesura_habs.webp', 'Glándulas Venenosas': 'assets/gesura_habs_1.webp'},
@@ -158,7 +158,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Antlar',
         'El Verdugo Ancestral',
-        'Esta ancestral criatura sometió a una antigua civilización que había perdido a su protector hacía mucho tiempo. Cuando la patrulla científica intentó detenerlo, su ira se desató poniendo en riesgo a los habitantes. \nEn su batalla contra Ultraman demostró su increíble resistencia; de no ser por un regalo místico dejado atrás por un legendario héroe, posiblemente Ultraman habría tenido muchos problemas.\nSorprendentemente es el primer enemigo en resistir completamente el poder de un Rayo Specium.',
+        'Esta ancestral criatura sometió a una antigua civilización que había perdido a su protector hacía mucho tiempo. Cuando la patrulla científica intentó detenerlo, su ira se desató poniendo en riesgo a los habitantes. \nEn su batalla contra Ultraman demostró su increíble resistencia; de no ser por un regalo místico dejado atrás por un legendario héroe, posiblemente Ultraman habría tenido muchísimos problemas.\nSorprendentemente es el primer enemigo en resistir completamente el poder de un Rayo Specium.',
         ['assets/007_antlar_0.webp','assets/007_antlar_1.webp','assets/007_antlar_3.webp','assets/007_antlar_4.webp','assets/007_antlar_5.webp','assets/007_antlar_6.webp','assets/007_antlar_7.webp','assets/007_antlar_8.webp','assets/007_antlar_9.webp'],
         //Habilidades del Kaiju
         {'Exoesqueleto':'assets/antlar_habs.webp', 
@@ -228,7 +228,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Gango',
         'El Monstruo Onírico',
-        'De Origen Lovecraftniano, Gango es una manifestación de una mente villanesca y retorcida. Desde los cielos un extraño elemento aterrizaría en la Tierra. Tras ser analizado se confirmaría que es capaz de interactuar con seres inteligentes para manifestar sus deseos inmediatos. Una vez Gango es plasmado en la realidad entraría en descontrol combatiendo así contra Ultraman. Finalmente su creador lograría recobrar lucidez y deshacer su existencia.',
+        'De Origen lovecraftniano, Gango es una manifestación de una mente villanesca y retorcida. Desde los cielos un extraño elemento aterrizaría en la Tierra. Tras ser analizado se confirmaría que es capaz de interactuar con seres inteligentes para manifestar sus deseos inmediatos. Una vez Gango es plasmado en la realidad entraría en descontrol combatiendo así contra Ultraman. Finalmente su creador lograría recobrar lucidez y deshacer su existencia.',
          //Imágenes Principales
         ['assets/011_gango_0.webp','assets/011_gango_1.webp','assets/011_gango_3.webp'],
         //Habilidades del Kaiju
@@ -263,7 +263,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Dodongo',
         'El Equino Dracónico',
-        'Contraparte simbiótica de una momia antigua. Es posible que fuera el protector de su amo antepasado. Muerta su figura superior, Dodongo se dispuso a plasmar su venganza contra esta nueva era; destruyendo todo a su paso, llegaría una mina donde aterrorizaría a los trabajadores. La Patrulla Científica hizo lo posible para detenerlo propinándole daño pero finalmente contarían con Ultraman para darle un triste tiro de gracia.',
+        'Contraparte simbiótica de una momia antigua. Es posible que fuera el protector de su amo antepasado. Muerta su figura superior, Dodongo se dispuso a plasmar su venganza contra esta nueva era; destruyendo todo a su paso, llegaría una mina donde aterrorizaría a los trabajadores. La Patrulla Científica hizo lo posible para detenerlo propinándole daño pero finalmente contarían con Ultraman para darle un triste pero necesario tiro de gracia.',
          //Imágenes Principales
         ['assets/013_dodongo_0.webp','assets/013_dodongo_1.webp','assets/013_dodongo_3.webp'],
         //Habilidades del Kaiju
@@ -331,7 +331,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
       Enemy(
         'Alien Baltan II',
         'La Reencarnación de la Venganza',
-        'Tras su primer encuentro con Ultraman en la Tierra, los Baltan´s sobrevivientes consiguieron replegarse en un planeta de Nombre "R" donde formularon su venganza. El objetivo era separar a Ultraman de la Tierra para atacarlo por dos frentes. Primero secuestrando una nave espacial llevándola al Planeta R y segundo atacando un aeropuerto con gran concurrencia. Sin embargo, Ultraman ya mucho más experimentado como heróe terrestre logró resolverlo de forma magistral.',
+        'Tras su primer encuentro con Ultraman en la Tierra, los Baltan´s sobrevivientes consiguieron replegarse en un planeta llamado "R" donde formularon su venganza. El objetivo era separar a Ultraman de la Tierra para atacarlo por dos frentes. Primero secuestrando una nave espacial llevándola a su nuevo planeta y segundo atacando un aeropuerto con gran concurrencia. Sin embargo, Ultraman, ya mucho más experimentado como heróe terrestre logró resolverlo de forma magistral.',
          //Imágenes Principales
         ['assets/017_alien_baltan_0.webp','assets/017_alien_baltan_1.webp','assets/017_alien_baltan_3.webp'],
         //Habilidades del Kaiju
@@ -342,7 +342,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '0 ~ 15,000T',
         planet: 'Planeta R',
         ultra: '@ULTRAMAN',
-        comentary: '“Si bien crearon un plan exhaustivo para mantenerme alejado de la acción, no contaron con mi poderosa pero extenuante habilidad de teletransportación, aunque debo admitir que estudiaron bien como contrarrestar alguna de mis técnicas”.',
+        comentary: '“Si bien crearon un plan exhaustivo para mantenerme alejado de la acción, no contaron con mi poderosa pero extenuante habilidad de teletransportación, aunque debo admitir que estudiaron muy bien como contrarrestar alguna de mis técnicas”.',
         imgDrawer: 'assets/017_alien_baltan_2.webp'
       ),
       Enemy(
@@ -398,8 +398,8 @@ final Map<String,List<Enemy>> ultraEnemies = {
       ),
       Enemy(
         'Hidora',
-        '',
-        '',
+        'El Avatar Dragón',
+        'De origen sobrenatural, Hidora es la manifestación terrenal de la imaginación (o no) de un niño fallecido en un accidente automovílistico. Siguiendo su voluntad espiritual, este dragón pondría en peligro a múltiples vehículos en la ruta 87. Ultraman intevendría como siempre pero esta era una batalla que no se podía resolver con violencia, solo se podría mediante la justicia suficiente para que el pequeño joven descansara en paz.  ',
          //Imágenes Principales
         ['assets/021_hidora_0.webp','assets/021_hidora_1.webp','assets/021_hidora_3.webp','assets/021_hidora_4.webp'],
         //Habilidades del Kaiju
@@ -410,13 +410,13 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '',
         planet: '',
         ultra: '@ULTRAMAN',
-        comentary: '“”.',
+        comentary: '“Aún para los Ultras, los temas espirituales son un verdadero misterio. La Tierra parece albergar un gran componente espiritual gracias al poder de las almas humanas Quizás sea por este tipo de cosas que hacen de este planeta un hogar irreplicable”.',
         imgDrawer: 'assets/021_hidora_2.webp'
       ),
       Enemy(
         'Kemular',
         'El Anfibio Venenoso',
-        'Descripción de Kemular',
+        'Residente de un volcán inactivo, Kemular posee la misma categoría que Gabora en cuanto a peligrosidad ambiental. Su gas venenoso era suficiente para contaminar el aire circundante, causando inconsciencia y en un lapso más prolongado, la muerte. Siendo una bestia agresiva se necesito del ejército, la Patrulla Científica y de Ultraman para detener tal amenaza. ',
          //Imágenes Principales
         ['assets/022_kemular_0.webp','assets/022_kemular_1.webp','assets/022_kemular_3.webp'],
         //Habilidades del Kaiju
@@ -427,13 +427,13 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '10,000T',
         planet: 'La Tierra (Cráter \nKyushu)',
         ultra: '@ULTRAMAN',
-        comentary: '“”.',
+        comentary: '“Para ser una criatura cuadrúpeda, es epecialmente inteligente y resistente. Su gas tóxico es temible, no me sorprende que habitara en una zona de gases volcánicos.',
         imgDrawer: 'assets/022_kemular_2.webp'
       ),
       Enemy(
         'Telesdon',
         'El Verdugo Subterráneo',
-        'Descripción de Telesdon',
+        'En la superficie terrestre la especie dominante es la humana, pero que hay debajo de nosotros? Esta criatura es aliada y defensora de los llamados habitantes subterráneos los cuales mediante un plan elaborado planeaban manipular a Ultraman para sumarlo como recurso a la hora de dominar la superficie. No obstante, Ultraman suele ser incorruptuble por lo que a la primera de cambios iría en contra de este Kaiju habitante del subsuelo.',
          //Imágenes Principales
         ['assets/023_telesdon_0.webp','assets/023_telesdon_1.webp','assets/023_telesdon_3.webp'],
         //Habilidades del Kaiju
@@ -444,7 +444,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '120,000T',
         planet: 'La Tierra\n(Subsuelo)',
         ultra: '@ULTRAMAN',
-        comentary: '“Presunta criatura aliada y defensora de los habitantes subterráneos de la Tierra, aquellos fueron capaces de capturarme e hipnotizar mi contraparte humana. Afortunadamente, ese tipo estados no es trasnferible a la hora de adquirir mi forma alienígena; lo que me permitió lidiar con esta mounstruosa bestia sin contratiempos”.',
+        comentary: '“Aquellos seres subterráneos fueron capaces de capturar e hipnotizar a mi contraparte humana. Afortunadamente, ese tipo de estados no son trasnferibles a la hora de adquirir mi forma alienígena.”.',
         imgDrawer: 'assets/023_telesdon_2.webp'
       ),
       Enemy(
@@ -466,8 +466,8 @@ final Map<String,List<Enemy>> ultraEnemies = {
       ),
       Enemy(
         'Gubira',
-        'El Monstruo Taladrante',
-        'Descripción de Gubira',
+        'La Criatura Subacuática Taladrante',
+        'Instalaciones submarinas eran atacadas por una terrible criatura de las profundidades, siendo Gubira un Kaiju de naturaleza agresiva y territorial, se tuvieron que emplear tácticas de rescate para el personal en las instalaciones. Ultraman perseguiría a este Kaiju hasta llegar a la superficie, donde tendría que enfrentar su peligrosa arma capaz de penetrar la corteza terrestre.',
          //Imágenes Principales
         ['assets/025_gubira_0.webp','assets/025_gubira_1.webp','assets/025_gubira_3.webp'],
         //Habilidades del Kaiju
@@ -478,13 +478,13 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '35,000T',
         planet: 'La Tierra\n(Profundidades)',
         ultra: '@ULTRAMAN',
-        comentary: '“”.',
+        comentary: '“Me impresionó su capacidad para adaptarse a una movilidad terrestre. Mientras ostetara su cuerno, técnicas como el Ultra-Slash serían inútiles, quien diría que su arma más peligrosa terminaría siendo su punto más débil”.',
         imgDrawer: 'assets/025_gubira_2.webp'
       ),
       Enemy(
         'Red King II',
-        '',
-        '',
+        'El Retorno del Rey',
+        'La vuelta de un cometa espacial traería consigo muchas sorpresas. Cerca de los alpes japoneses múltiples Kaijus son perturbados por este astro desatándose un gran descontrol. Nuevamente como en aquella remota isla, un nuevo Red King se presentaría para alzarse como el alfa, sin embargo, en esta ocasión sería aún más peligroso. Con bombas de hidrógeno alojadas en su cuello, Ultraman debía enfrentar a un enemigo más poderoso que su rival original teniendo el mismo o quizás mucho más cuidado que contra el que tuvo con Ragon.',
          //Imágenes Principales
         ['assets/026_redking_II_0.webp','assets/026_redking_II_1.webp','assets/026_redking_II_3.webp'],
         //Habilidades del Kaiju
@@ -495,47 +495,47 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '',
         planet: '',
         ultra: '@ULTRAMAN',
-        comentary: '“”.',
+        comentary: '“La imaginación es vital para la supervivencia de un guerrero. Tuve que combinar mi poder de telequinesis y mi Ultra-Slash en un intento por detonar las bombas sin compremeter la Tierra”.',
         imgDrawer: 'assets/026_redking_II_2.webp'
       ),
       Enemy(
         'Gomora',
-        '',
-        '',
+        'El Príncipe de los Monstruos',
+        'El mayor hallazgo paleontológico hecho por la humanidad. Este antiguo pariente vivo de los dinosaurios sería sedado y trasladado a un museo para exponerlo. No obstante, en medio viaje, el kaiju lograría despertar y liberarse. Ultraman le plantaría cara, pero contra todo pronóstico se llevaría su primera derrota. Tras múltiples acontecimientos Gomora amenazaría los castillos de Osaka y mediante una extenuante batalla contra las fuerzas de defensa lograrían debitarlo para que así Ultraman logre su merecida revancha.',
          //Imágenes Principales
         ['assets/027_gomora_0.webp','assets/027_gomora_1.webp','assets/027_gomora_3.webp'],
         //Habilidades del Kaiju
         {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
         color: Color.fromARGB(255, 150, 69, 8),
-        aliasOf: '',
+        aliasOf: 'El Dinosaurio Ancestral',
         height: '',
         weight: '',
         planet: '',
         ultra: '@ULTRAMAN',
-        comentary: '“”.',
+        comentary: '“No puedo imaginar un Kaiju mas completo en términos de combate, tanto el uso de sus cuernos como de su cola son magistrales. De querer salir victorioso en una batalla cuerpo a cuerpo, debería usar mis ataques de lanzamiento con una precisión casi demencial”.',
         imgDrawer: 'assets/027_gomora_2.webp'
       ),
       Enemy(
         'Alien Dada',
-        '',
-        '',
+        'El Agente #271',
+        'Desde un mundo lejano un agente alienígena es enviado para secuestrar especímenes humanos. Su objetivo era encontrar alguno adecuado para someterlos a extenuantes pruebas y experimentos. Tras múltiples escenas de terror y suspenso, el Agente #271 se toparía con Ultraman el cual sería superior en combate en todo aspecto. En un intento fútil logra miniaturizar a Ultraman, pero las habilidades de este le permiten retomar su forma original y derrotarlo. ',
          //Imágenes Principales
         ['assets/028_alien_dada_0.webp','assets/028_alien_dada_1.webp','assets/028_alien_dada_3.webp', 'assets/028_alien_dada_4.webp'],
         //Habilidades del Kaiju
         {'':'assets/kaiju_habs.webp', '-': 'assets/kaiju_habs_1.webp'},
         color: Color.fromARGB(255, 77, 78, 67),
-        aliasOf: '',
+        aliasOf: 'El Fantasma de las Tres Caras',
         height: '',
         weight: '',
         planet: '',
         ultra: '@ULTRAMAN',
-        comentary: '“”.',
+        comentary: '“Los rumores sugieren que los Dadas necesitan entidades externas de morfología similar para intentar reproducirse, desconozco la verdadera razón de sus actos, pero experimentar con seres inocentes es algo que no puedo permitir”.',
         imgDrawer: 'assets/028_alien_dada_2.webp'
       ),
       Enemy(
         'Goldon',
         '',
-        '',
+        'Las reservas de oro en una mina famosa comenzaban a escasear sin explicación aparente. Goldon era sin duda el responsable. Este Kaiju destruiría las inmediaciones en búsqueda de más y más alimento. La Patrulla Científica lograría contenerlo y derrotarlo por su cuenta, pero para variar existía un espécimen más oculto. Aquel sería quien enfrentaría a Ultraman en un combate de resistencia para poder así rescatar a sus compañeros capturados bajo Tierra.',
          //Imágenes Principales
         ['assets/029_goldon_0.webp','assets/029_goldon_1.webp','assets/029_goldon_3.webp','assets/029_goldon_4.webp','assets/029_goldon_5.webp'],
         //Habilidades del Kaiju
@@ -546,7 +546,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '',
         planet: '',
         ultra: '@ULTRAMAN',
-        comentary: '“”.',
+        comentary: '“El oro es un metal precioso valorado incluso por seres alienígenas, los más primitivos se encandilan por su brillo pero en realidad posee propiedades únicas que seguramente Goldon aprovechaba para adquirir nutrientes”.',
         imgDrawer: 'assets/029_goldon_2.webp'
       ),
       Enemy(
@@ -602,8 +602,8 @@ final Map<String,List<Enemy>> ultraEnemies = {
       ),
       Enemy(
         'Alien Mephilas',
-        '',
-        '',
+        'El Lucifer Alienígena',
+        'Formando parte de la élite alienígena, los Mephilas son una raza poderosa pero que curiosamente consiguen gloria mediante la dominación de mundos por medios alternativos a la violencia. Su plan era convencer a un inocente terrestre de cederle el derecho a poseer la Tierra; pero al no tener éxito entraría en tanta ira y desesperación que por un momento combatiría contra Ultraman. No obstante aún cuando la batalla entraba en un cruento empate, admitiría su aplastante derrota al no poder dominar el corazón humano.',
          //Imágenes Principales
         ['assets/033_mephilas_0.webp','assets/033_mephilas_1.webp','assets/033_mephilas_3.webp','assets/033_mephilas_4.webp','assets/033_mephilas_5.webp'],
         //Habilidades del Kaiju
@@ -614,7 +614,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '',
         planet: '',
         ultra: '@ULTRAMAN',
-        comentary: '“”.',
+        comentary: '“Aún cuando posiblemente se trate de uno de los seres más inteligentes del universo, desde esa posición es imposible entender a los humanos. La mezcla de lógica y emociones humanas puede parecer precaria pero eso mismo es lo que los vuelve impredecibles ante seres de tal calibre”.',
         imgDrawer: 'assets/033_mephilas_2.webp'
       ),
       Enemy(
@@ -636,8 +636,8 @@ final Map<String,List<Enemy>> ultraEnemies = {
       ),
       Enemy(
         'Seabozu',
-        '',
-        '',
+        'El Heraldo del Cementerio de Mounstruos',
+        'Residente del confortable cementerio de mounstruos, puede decirse que Seabozu en vida experimentó vez tras vez el odio de una civilización dominante. Ya cansado, logró encontrar paz en la muerte, hasta que una serie de experimentos espaciales lo hicieron caer y aterrizar en la Tierra. Tras vagar con tristeza al solo recibir nuevamente odio y dolor, Seabozu anhelaba volver a descansar en su bello hogar. Ultraman lidió contra estra criatura por mucho tiempo pero se percató que la solución en este caso sería diferente.',
          //Imágenes Principales
         ['assets/035_seabozu_0.webp','assets/035_seabozu_1.webp','assets/035_seabozu_3.webp','assets/035_seabozu_4.webp','assets/035_seabozu_5.webp'],
         //Habilidades del Kaiju
@@ -648,7 +648,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '',
         planet: '',
         ultra: '@ULTRAMAN',
-        comentary: '“”.',
+        comentary: '“Cómo héroe soy consciente que he tomado vidas, seres maliciosos, peligrosos pero algunos inconscientes de sus actos. Me hago responsable por todo ello. En esta ocasión debía romper el ciclo, debía ayudarlo a volver. Aunque sinceramente hubiera sido más fácil de no ser tan testarudo”.',
         imgDrawer: 'assets/035_seabozu_2.webp'
       ),
       Enemy(
@@ -670,8 +670,8 @@ final Map<String,List<Enemy>> ultraEnemies = {
       ),
       Enemy(
         'Geromimon',
-        '',
-        '',
+        'El Jefe de los Monstruos',
+        'Siendo el líder de toda figura Kaiju terrestre, Geronimon es un nigromante capaz de revivir a sus semejantes caídos. Debido al enorme resentimiento que tenía por los humanos, este jefe monstruoso planearía armar un ejército de 50 Kaijus con el fin de asolar Japón. Para su desgracia, un Kaiju afín a los terrícolas lo traicionaría, dándole a los humanos la oportunidad de combatirlo. Siendo una de las batallas más difíciles e igualadas para nuestro héroe alienígena, se necesitaba del factor humano para ponerle fin de una vez por todas.',
          //Imágenes Principales
         ['assets/037_geronimon_0.webp','assets/037_geronimon_1.webp','assets/037_geronimon_3.webp','assets/037_geronimon_4.webp','assets/037_geronimon_5.webp','assets/037_geronimon_6.webp','assets/037_geronimon_7.webp'],
         //Habilidades del Kaiju
@@ -682,7 +682,7 @@ final Map<String,List<Enemy>> ultraEnemies = {
         weight: '',
         planet: '',
         ultra: '@ULTRAMAN',
-        comentary: '“”.',
+        comentary: '“No es común encontrar bestias Kaiju conscientes. Esta es la muestra clara que estos majestuosos seres pueden evolucionar, aún así, hay que diferenciar a los Kaijus maliciosos de los de buen corazón... ustedes ya saben de quién hablo”.',
         imgDrawer: 'assets/037_geronimon_2.webp'
       ),
       Enemy(
